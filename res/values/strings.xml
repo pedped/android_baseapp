@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Coreapp</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_ac__login">AC_Login</string>
+    <string name="ops">خطا</string>
+    <string name="ok">قبول</string>
+
+</resources>

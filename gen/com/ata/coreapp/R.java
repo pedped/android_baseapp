@@ -1609,9 +1609,18 @@ containing a value of this type.
     }
     public static final class id {
         public static final int acList_lv_Master=0x7f08005a;
-        public static final int acLogin_btn_login=0x7f08006a;
-        public static final int acLogin_et_Email=0x7f080068;
-        public static final int acLogin_et_Password=0x7f080069;
+        public static final int acLogin_btn_login=0x7f080073;
+        public static final int acLogin_et_Email=0x7f080071;
+        public static final int acLogin_et_Password=0x7f080072;
+        public static final int acRegister_btn_Login=0x7f080070;
+        public static final int acRegister_btn_Register=0x7f08006f;
+        public static final int acRegister_chb_Gender=0x7f08006d;
+        public static final int acRegister_chb_Term=0x7f08006e;
+        public static final int acRegister_et_Email=0x7f08006b;
+        public static final int acRegister_et_FirstName=0x7f080068;
+        public static final int acRegister_et_LastName=0x7f080069;
+        public static final int acRegister_et_Password=0x7f08006c;
+        public static final int acRegister_et_Phone=0x7f08006a;
         public static final int action_bar=0x7f08003a;
         public static final int action_bar_activity_content=0x7f080027;
         public static final int action_bar_container=0x7f080039;
@@ -1623,7 +1632,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f080028;
         public static final int action_menu_presenter=0x7f080029;
         public static final int action_mode_close_button=0x7f080042;
-        public static final int action_settings=0x7f080070;
+        public static final int action_settings=0x7f080079;
         public static final int activity_chooser_view_content=0x7f080043;
         public static final int always=0x7f08001e;
         public static final int beginning=0x7f080023;
@@ -1647,7 +1656,7 @@ containing a value of this type.
         public static final int end=0x7f080025;
         public static final int expand_activities_button=0x7f080044;
         public static final int expanded_menu=0x7f08004a;
-        public static final int fl_inner=0x7f08006b;
+        public static final int fl_inner=0x7f080074;
         public static final int flip=0x7f080034;
         public static final int grayscale=0x7f080012;
         public static final int gridview=0x7f080035;
@@ -1683,10 +1692,10 @@ containing a value of this type.
         public static final int pullFromEnd=0x7f08002e;
         public static final int pullFromStart=0x7f08002d;
         public static final int pullUpFromBottom=0x7f080032;
-        public static final int pull_to_refresh_image=0x7f08006c;
-        public static final int pull_to_refresh_progress=0x7f08006d;
-        public static final int pull_to_refresh_sub_text=0x7f08006f;
-        public static final int pull_to_refresh_text=0x7f08006e;
+        public static final int pull_to_refresh_image=0x7f080075;
+        public static final int pull_to_refresh_progress=0x7f080076;
+        public static final int pull_to_refresh_sub_text=0x7f080078;
+        public static final int pull_to_refresh_text=0x7f080077;
         public static final int radio=0x7f08004d;
         public static final int rotate=0x7f080033;
         public static final int sandbox=0x7f080008;
@@ -1773,17 +1782,23 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030015;
         public static final int abc_search_view=0x7f030016;
         public static final int abc_simple_decor=0x7f030017;
-        public static final int ac_list=0x7f030018;
-        public static final int ac_login=0x7f030019;
-        public static final int listitem=0x7f03001a;
-        public static final int login=0x7f03001b;
-        public static final int pull_to_refresh_header_horizontal=0x7f03001c;
-        public static final int pull_to_refresh_header_vertical=0x7f03001d;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
+        public static final int ac_contactus=0x7f030018;
+        public static final int ac_list=0x7f030019;
+        public static final int ac_login=0x7f03001a;
+        public static final int ac_register=0x7f03001b;
+        public static final int ac_viewnotification=0x7f03001c;
+        public static final int listitem=0x7f03001d;
+        public static final int login=0x7f03001e;
+        public static final int pull_to_refresh_header_horizontal=0x7f03001f;
+        public static final int pull_to_refresh_header_vertical=0x7f030020;
+        public static final int support_simple_spinner_dropdown_item=0x7f030021;
     }
     public static final class menu {
-        public static final int ac__login=0x7f0c0000;
-        public static final int list=0x7f0c0001;
+        public static final int ac__contact_us=0x7f0c0000;
+        public static final int ac__login=0x7f0c0001;
+        public static final int ac__register=0x7f0c0002;
+        public static final int ac__view_notification=0x7f0c0003;
+        public static final int list=0x7f0c0004;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1827,8 +1842,8 @@ containing a value of this type.
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f070025;
         public static final int action_settings=0x7f070031;
-        public static final int action_sign_in=0x7f070037;
-        public static final int action_sign_in_short=0x7f070038;
+        public static final int action_sign_in=0x7f07003a;
+        public static final int action_sign_in_short=0x7f07003b;
         public static final int app_name=0x7f07002d;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
@@ -1919,21 +1934,21 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f070018;
-        public static final int error_field_required=0x7f07003e;
-        public static final int error_incorrect_password=0x7f07003d;
-        public static final int error_invalid_email=0x7f07003b;
-        public static final int error_invalid_password=0x7f07003c;
+        public static final int error_field_required=0x7f070041;
+        public static final int error_incorrect_password=0x7f070040;
+        public static final int error_invalid_email=0x7f07003e;
+        public static final int error_invalid_password=0x7f07003f;
         public static final int hello_world=0x7f070030;
         public static final int khata=0x7f07002e;
         public static final int motevajehshodam=0x7f07002f;
         public static final int ok=0x7f070034;
         public static final int ops=0x7f070033;
-        public static final int plus_disconnect=0x7f07003a;
-        public static final int plus_sign_out=0x7f070039;
+        public static final int plus_disconnect=0x7f07003d;
+        public static final int plus_sign_out=0x7f07003c;
         /**  Strings related to login 
          */
-        public static final int prompt_email=0x7f070035;
-        public static final int prompt_password=0x7f070036;
+        public static final int prompt_email=0x7f070038;
+        public static final int prompt_password=0x7f070039;
         /**  Just use standard Pull Down String when pulling up. These can be set for languages which require it 
  Just use standard Pull Down String when pulling up. These can be set for languages which require it 
          */
@@ -1943,7 +1958,10 @@ containing a value of this type.
         public static final int pull_to_refresh_pull_label=0x7f070027;
         public static final int pull_to_refresh_refreshing_label=0x7f070029;
         public static final int pull_to_refresh_release_label=0x7f070028;
+        public static final int title_activity_ac__contact_us=0x7f070036;
         public static final int title_activity_ac__login=0x7f070032;
+        public static final int title_activity_ac__register=0x7f070035;
+        public static final int title_activity_ac__view_notification=0x7f070037;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */

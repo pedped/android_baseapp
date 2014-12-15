@@ -25,6 +25,8 @@ import com.ata.corebase.sf;
 
 public class AC_Login extends CoreActivity {
 
+	private boolean isLoading = false;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -42,6 +44,15 @@ public class AC_Login extends CoreActivity {
 	}
 
 	protected void requestLogin() {
+		
+		// check if we are not loading
+		if(this.isLoading )
+		{
+			// we are loading now
+			AC_Login.this.setLoading(true);
+			return;
+		}
+		this.isLoading = true;
 
 		// when user request login, we have to request the web
 		/*
@@ -100,6 +111,12 @@ public class AC_Login extends CoreActivity {
 					@Override
 					public void onError() {
 
+					}
+
+					@Override
+					public void Anytime() {
+						isLoading = false;
+						AC_Login.this.setLoading(false);
 					}
 				});
 

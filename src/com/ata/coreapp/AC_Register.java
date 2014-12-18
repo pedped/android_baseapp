@@ -14,10 +14,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.CheckedTextView;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.ata.classes.LoginResult;
+import com.ata.config.config;
 import com.ata.corebase.CoreActivity;
 import com.ata.corebase.ObjectParser;
 import com.ata.corebase.interfaces.OnResponseListener;
@@ -71,11 +72,19 @@ public class AC_Register extends CoreActivity {
 			return;
 		}
 
+		// check if user accepting term of service
+		if (!((CheckBox) findViewById(R.id.acRegister_chb_Term)).isChecked()) {
+			// user do not accept term of service!
+			Toast.makeText(this, "You must accept term of usage",
+					Toast.LENGTH_SHORT).show();
+			return;
+		}
+
 		// set flag
 		this.isLoading = true;
 		AC_Register.this.setLoading(true);
 
-		// get fileds
+		// get fields
 		String fname = this.findEditText(R.id.acRegister_et_FirstName)
 				.getText().toString();
 		String lname = this.findEditText(R.id.acRegister_et_LastName).getText()
@@ -84,13 +93,13 @@ public class AC_Register extends CoreActivity {
 				.toString();
 		String password = this.findEditText(R.id.acRegister_et_Password)
 				.getText().toString();
-		boolean gender = ((CheckedTextView) findViewById(R.id.acRegister_chb_Gender))
+		boolean gender = ((CheckBox) findViewById(R.id.acRegister_chb_Gender))
 				.isChecked();
 
 		// phone is optimal
 		String phone = this.findEditText(R.id.acRegister_et_Phone).getText()
 				.toString();
-
+ 
 		/*
 		 * Create a web request request to signup to the site Dec 15, 2014
 		 */
@@ -99,10 +108,10 @@ public class AC_Register extends CoreActivity {
 		params.add(new BasicNameValuePair("lname", lname));
 		params.add(new BasicNameValuePair("email", email));
 		params.add(new BasicNameValuePair("password", password));
-		params.add(new BasicNameValuePair("gender", String.valueOf(gender)));
+		params.add(new BasicNameValuePair("gender", gender ? "1" : "0"));
 		params.add(new BasicNameValuePair("phone", phone));
 
-		nc.WebRequest(this, config.requestUrl + "public/regsiter", params,
+		nc.WebRequest(this, config.requestUrl + "public/registermobile", params,
 				new OnResponseListener() {
 
 					@Override
@@ -127,13 +136,20 @@ public class AC_Register extends CoreActivity {
 					public void onSuccess(String result) {
 						try {
 
-							// if it was successfull, we have to get loginResult
+							// if it was successfully, we have to get
+							// loginResult
 							// Info
 							LoginResult loginResult = ObjectParser
 									.LoginResult_Parse(result);
 							if (loginResult != null) {
 								// success login result
 								loginResult.Store(AC_Register.this);
+
+								// go to the home page
+								startActivityWithName(AC_Home.class);
+
+								// finish current page
+								finish();
 							} else {
 								// there was a problem
 								Toast.makeText(

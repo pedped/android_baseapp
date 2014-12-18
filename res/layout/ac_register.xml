@@ -41,7 +41,8 @@
                 android:layout_weight=".5"
                 android:ems="10"
                 android:hint="First Name"
-                android:inputType="textPersonName" >
+                android:inputType="textPersonName"
+                android:text="Ata" >
 
                 <requestFocus />
             </EditText>
@@ -53,7 +54,8 @@
                 android:layout_weight=".5"
                 android:ems="10"
                 android:hint="Last Name"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:text="Zanegene" />
 
         </LinearLayout>
 
@@ -63,7 +65,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Phone Number"
-            android:inputType="phone" />
+            android:inputType="phone"
+            android:text="9399477295" />
 
         <EditText
             android:id="@+id/acRegister_et_Email"
@@ -71,7 +74,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:text="convertersoft@gmail.com" />
 
         <EditText
             android:id="@+id/acRegister_et_Password"
@@ -79,9 +83,10 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:text="1598753pedped" />
 
-        <CheckedTextView
+        <CheckBox
             android:id="@+id/acRegister_chb_Gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -92,6 +97,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:checked="true"
             android:text="I accept term of services" />
 
     </LinearLayout>

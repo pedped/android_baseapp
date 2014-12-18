@@ -17,6 +17,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.ata.classes.LoginResult;
+import com.ata.config.config;
 import com.ata.corebase.CoreActivity;
 import com.ata.corebase.ObjectParser;
 import com.ata.corebase.interfaces.OnResponseListener;
@@ -44,10 +45,9 @@ public class AC_Login extends CoreActivity {
 	}
 
 	protected void requestLogin() {
-		
+
 		// check if we are not loading
-		if(this.isLoading )
-		{
+		if (this.isLoading) {
 			// we are loading now
 			AC_Login.this.setLoading(true);
 			return;
@@ -60,18 +60,17 @@ public class AC_Login extends CoreActivity {
 		 */
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 		params.add(new BasicNameValuePair("deviceid", sf.getDeviceID(this)));
-		
+
 		params.add(new BasicNameValuePair("devicetype", "1"));
-		
+
 		params.add(new BasicNameValuePair("email", this
 				.findEditText(R.id.acLogin_et_Email).getText().toString()));
-		
+
 		params.add(new BasicNameValuePair("password", this
 				.findEditText(R.id.acLogin_et_Password).getText().toString()));
-		
-		
-		nc.WebRequest(AC_Login.this, config.requestUrl + "user/loginmobile", params,
-				new OnResponseListener() {
+
+		nc.WebRequest(AC_Login.this, config.requestUrl + "public/loginmobile",
+				params, new OnResponseListener() {
 
 					@Override
 					public void onUnSuccess(String message) {
@@ -89,7 +88,7 @@ public class AC_Login extends CoreActivity {
 											}
 										}).create().show();
 
-					}
+					} 
 
 					@Override
 					public void onSuccess(String result) {
@@ -101,6 +100,13 @@ public class AC_Login extends CoreActivity {
 								// success login, we have to store information
 								AC_Login.this
 										.LogDebug("User Logged In Successfully");
+
+								// store login result
+								loginResult.Store(AC_Login.this);
+
+								// start home page,
+								startActivityWithName(AC_Home.class);
+								finish();
 							}
 						} catch (Exception e) {
 							e.printStackTrace();

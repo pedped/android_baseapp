@@ -10,5 +10,6 @@
     <string name="title_activity_ac__register">Register</string>
     <string name="title_activity_ac__contact_us">Contact Us</string>
     <string name="title_activity_ac__view_notification">View Notification</string>
+    <string name="title_activity_ac__home">Home Page</string>
 
 </resources>

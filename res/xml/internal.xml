@@ -9,6 +9,7 @@
     <EditTextPreference android:key="level" />
     <EditTextPreference android:key="cityid" />
     <EditTextPreference android:key="imagelink" />
+    <EditTextPreference android:key="lastnotificationsee" android:defaultValue="0" />
     <EditTextPreference android:key="requireuserlogin" android:defaultValue="1"  />
 
 </PreferenceScreen>

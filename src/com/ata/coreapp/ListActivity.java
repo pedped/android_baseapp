@@ -1,14 +1,13 @@
 package com.ata.coreapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.ata.corebase.UnlimitedAdapter.UnlimitListAdapterItem;
-import com.ata.corebase.UnlimitedAdapter.UnlimitListAdapterItem.UnlimitListAdapterItemType;
-import com.ata.corebase.UnlimitedList;
+import com.corebase.unlimited.UnlimitedAdapter.UnlimitListAdapterItem;
+import com.corebase.unlimited.UnlimitedAdapter.UnlimitListAdapterItem.UnlimitListAdapterItemType;
+import com.corebase.unlimited.UnlimitedList;
 
 public class ListActivity extends ActionBarActivity {
 
@@ -37,7 +36,6 @@ public class ListActivity extends ActionBarActivity {
 		// refresh the list
 		ul.Begin();
 
-		startActivity(new Intent(ListActivity.this, AC_Login.class));
 
 	}
 

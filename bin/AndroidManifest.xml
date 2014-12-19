@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
@@ -30,45 +31,46 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
+        <!-- Meta Keys For Google Map -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyCOrSXBXKwSCJlUj4j8AdpnAJw5rvrwHHE" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="5089000" />
 
+        <!-- Activities -->
         <activity
             android:name=".ListActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".AC_LoginGoogle"
+            android:name="com.ata.activity.AC_LoginGoogle"
             android:label="@string/title_activity_ac__login"
             android:windowSoftInputMode="adjustResize|stateHidden" >
         </activity>
-
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="5089000" />
-
         <activity
-            android:name=".AC_Login"
+            android:name="com.ata.activity.AC_Login"
             android:label="@string/title_activity_ac__login" >
         </activity>
         <activity
-            android:name=".AC_Register"
+            android:name="com.ata.activity.AC_Register"
             android:label="@string/title_activity_ac__register" >
         </activity>
         <activity
-            android:name=".AC_ContactUs"
+            android:name="com.ata.activity.AC_ContactUs"
             android:label="@string/title_activity_ac__contact_us" >
         </activity>
         <activity
-            android:name=".AC_ViewNotification"
+            android:name="com.ata.activity.AC_ViewNotification"
             android:label="@string/title_activity_ac__view_notification" >
         </activity>
         <activity
-            android:name=".AC_Home"
+            android:name="com.ata.activity.AC_Home"
             android:label="@string/title_activity_ac__home" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -76,7 +78,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-	
+
         <!-- Boot Complete Receiver -->
         <receiver
             android:name="com.ata.broadcastreceiver.BootReceiver"
@@ -86,19 +88,18 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-        
+
         <!-- Internet State Change -->
         <receiver android:name="com.ata.broadcastreceiver.NetworkStateChanged" >
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
-        
     </application>
 
     <!--
      To retrieve OAuth 2.0 tokens or invalidate tokens to disconnect a user. This disconnect
-     option is required to comply with the Google+ Sign-In developer policies
+     option is required to comply with the Google+ Sign-In developer policies
     -->
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
 

@@ -147,7 +147,7 @@ public final class R {
 		public static final int buy_with_google = 0x7f09000e;
 		public static final int classic = 0x7f090011;
 		public static final int disabled = 0x7f09002c;
-		public static final int fl_inner = 0x7f090079;
+		public static final int fl_inner = 0x7f090080;
 		public static final int flip = 0x7f090034;
 		public static final int grayscale = 0x7f090012;
 		public static final int gridview = 0x7f090035;
@@ -164,10 +164,10 @@ public final class R {
 		public static final int pullFromEnd = 0x7f09002e;
 		public static final int pullFromStart = 0x7f09002d;
 		public static final int pullUpFromBottom = 0x7f090032;
-		public static final int pull_to_refresh_image = 0x7f09007a;
-		public static final int pull_to_refresh_progress = 0x7f09007b;
-		public static final int pull_to_refresh_sub_text = 0x7f09007d;
-		public static final int pull_to_refresh_text = 0x7f09007c;
+		public static final int pull_to_refresh_image = 0x7f090081;
+		public static final int pull_to_refresh_progress = 0x7f090082;
+		public static final int pull_to_refresh_sub_text = 0x7f090084;
+		public static final int pull_to_refresh_text = 0x7f090083;
 		public static final int rotate = 0x7f090033;
 		public static final int sandbox = 0x7f090008;
 		public static final int satellite = 0x7f090002;
@@ -182,8 +182,8 @@ public final class R {
 		public static final int google_play_services_version = 0x7f0a0000;
 	}
 	public static final class layout {
-		public static final int pull_to_refresh_header_horizontal = 0x7f030020;
-		public static final int pull_to_refresh_header_vertical = 0x7f030021;
+		public static final int pull_to_refresh_header_horizontal = 0x7f030022;
+		public static final int pull_to_refresh_header_vertical = 0x7f030023;
 	}
 	public static final class string {
 		public static final int common_google_play_services_enable_button = 0x7f08000b;

@@ -24,37 +24,37 @@
             android:orientation="vertical"
             android:padding="24dp" >
 
-            <com.ata.corebase.CustomTextView
+            <com.corebase.element.CustomTextView
                 android:id="@+id/TextView01"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Address"
+                android:text="@string/address"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <com.ata.corebase.CustomTextView
+            <com.corebase.element.CustomTextView
                 android:id="@+id/acContactUs_txt_Address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <com.ata.corebase.CustomTextView
+            <com.corebase.element.CustomTextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Phone"
+                android:text="@string/phone"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <com.ata.corebase.CustomTextView
+            <com.corebase.element.CustomTextView
                 android:id="@+id/acContactUs_txt_Phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <com.ata.corebase.CustomButton
+            <com.corebase.element.CustomButton
                 android:id="@+id/acContactUs_btn_SendMessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Send Message"/>
+                android:text="@string/send_message" />
         </LinearLayout>
     </LinearLayout>
 

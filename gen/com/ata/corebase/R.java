@@ -408,7 +408,7 @@ public final class R {
 		public static final int end = 0x7f090025;
 		public static final int expand_activities_button = 0x7f090044;
 		public static final int expanded_menu = 0x7f09004a;
-		public static final int fl_inner = 0x7f090079;
+		public static final int fl_inner = 0x7f090080;
 		public static final int flip = 0x7f090034;
 		public static final int grayscale = 0x7f090012;
 		public static final int gridview = 0x7f090035;
@@ -422,6 +422,8 @@ public final class R {
 		public static final int image = 0x7f090045;
 		public static final int listMode = 0x7f090014;
 		public static final int list_item = 0x7f090047;
+		public static final int loadingview = 0x7f09007a;
+		public static final int main = 0x7f09007f;
 		public static final int manualOnly = 0x7f090030;
 		public static final int match_parent = 0x7f09000c;
 		public static final int middle = 0x7f090024;
@@ -430,16 +432,17 @@ public final class R {
 		public static final int none = 0x7f090000;
 		public static final int normal = 0x7f090001;
 		public static final int production = 0x7f090007;
+		public static final int progressBar1 = 0x7f09007b;
 		public static final int progress_circular = 0x7f09002a;
 		public static final int progress_horizontal = 0x7f09002b;
 		public static final int pullDownFromTop = 0x7f090031;
 		public static final int pullFromEnd = 0x7f09002e;
 		public static final int pullFromStart = 0x7f09002d;
 		public static final int pullUpFromBottom = 0x7f090032;
-		public static final int pull_to_refresh_image = 0x7f09007a;
-		public static final int pull_to_refresh_progress = 0x7f09007b;
-		public static final int pull_to_refresh_sub_text = 0x7f09007d;
-		public static final int pull_to_refresh_text = 0x7f09007c;
+		public static final int pull_to_refresh_image = 0x7f090081;
+		public static final int pull_to_refresh_progress = 0x7f090082;
+		public static final int pull_to_refresh_sub_text = 0x7f090084;
+		public static final int pull_to_refresh_text = 0x7f090083;
 		public static final int radio = 0x7f09004d;
 		public static final int rotate = 0x7f090033;
 		public static final int sandbox = 0x7f090008;
@@ -465,6 +468,7 @@ public final class R {
 		public static final int submit_area = 0x7f090057;
 		public static final int tabMode = 0x7f090015;
 		public static final int terrain = 0x7f090003;
+		public static final int textView1 = 0x7f09006c;
 		public static final int title = 0x7f090049;
 		public static final int top_action_bar = 0x7f09003e;
 		public static final int up = 0x7f09003f;
@@ -502,9 +506,11 @@ public final class R {
 		public static final int abc_search_dropdown_item_icons_2line = 0x7f030015;
 		public static final int abc_search_view = 0x7f030016;
 		public static final int abc_simple_decor = 0x7f030017;
-		public static final int pull_to_refresh_header_horizontal = 0x7f030020;
-		public static final int pull_to_refresh_header_vertical = 0x7f030021;
-		public static final int support_simple_spinner_dropdown_item = 0x7f030022;
+		public static final int loading = 0x7f03001f;
+		public static final int master = 0x7f030021;
+		public static final int pull_to_refresh_header_horizontal = 0x7f030022;
+		public static final int pull_to_refresh_header_vertical = 0x7f030023;
+		public static final int support_simple_spinner_dropdown_item = 0x7f030024;
 	}
 	public static final class string {
 		public static final int abc_action_bar_home_description = 0x7f08001b;
@@ -521,6 +527,7 @@ public final class R {
 		public static final int abc_shareactionprovider_share_with = 0x7f080026;
 		public static final int abc_shareactionprovider_share_with_application = 0x7f080025;
 		public static final int app_name = 0x7f08002d;
+		public static final int are_you_sure_you_want_logout_of_your_account = 0x7f080030;
 		public static final int common_google_play_services_enable_button = 0x7f08000b;
 		public static final int common_google_play_services_enable_text = 0x7f08000a;
 		public static final int common_google_play_services_enable_title = 0x7f080009;
@@ -547,7 +554,11 @@ public final class R {
 		public static final int common_signin_button_text = 0x7f080017;
 		public static final int common_signin_button_text_long = 0x7f080018;
 		public static final int khata = 0x7f08002e;
+		public static final int loading_please_wait = 0x7f080033;
+		public static final int logout = 0x7f080031;
 		public static final int motevajehshodam = 0x7f08002f;
+		public static final int ok = 0x7f080034;
+		public static final int ooops = 0x7f080035;
 		public static final int pull_to_refresh_from_bottom_pull_label = 0x7f08002a;
 		public static final int pull_to_refresh_from_bottom_refreshing_label = 0x7f08002c;
 		public static final int pull_to_refresh_from_bottom_release_label = 0x7f08002b;
@@ -555,6 +566,7 @@ public final class R {
 		public static final int pull_to_refresh_refreshing_label = 0x7f080029;
 		public static final int pull_to_refresh_release_label = 0x7f080028;
 		public static final int wallet_buy_button_place_holder = 0x7f080019;
+		public static final int yes_logout = 0x7f080032;
 	}
 	public static final class style {
 		public static final int AppBaseTheme = 0x7f060090;

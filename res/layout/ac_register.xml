@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.ata.coreapp.AC_Register" >
+    tools:context="com.ata.activity.AC_Register" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,74 +15,73 @@
         android:layout_weight="1"
         android:orientation="vertical" >
 
-        <TextView
+        <com.corebase.element.CustomTextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Register"
+            android:text="@string/register"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <TextView
+        <com.corebase.element.CustomTextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Please fill all information to signup to application" />
+            android:text="@string/please_fill_all_information_to_signup_to_application" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
 
-            <EditText
+            <com.corebase.element.CustomEditText
                 android:id="@+id/acRegister_et_FirstName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
                 android:ems="10"
-                android:hint="First Name"
+                android:hint="@string/first_name"
                 android:inputType="textPersonName"
                 android:text="Ata" >
 
                 <requestFocus />
-            </EditText>
+            </com.corebase.element.CustomEditText>
 
-            <EditText
+            <com.corebase.element.CustomEditText
                 android:id="@+id/acRegister_et_LastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
                 android:ems="10"
-                android:hint="Last Name"
+                android:hint="@string/last_name"
                 android:inputType="textPersonName"
-                android:text="Zanegene" />
-
+                android:text="Zangene" />
         </LinearLayout>
 
-        <EditText
+        <com.corebase.element.CustomEditText
             android:id="@+id/acRegister_et_Phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Phone Number"
+            android:hint="@string/phone_number"
             android:inputType="phone"
             android:text="9399477295" />
 
-        <EditText
+        <com.corebase.element.CustomEditText
             android:id="@+id/acRegister_et_Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:text="convertersoft@gmail.com" />
 
-        <EditText
+        <com.corebase.element.CustomEditText
             android:id="@+id/acRegister_et_Password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:text="1598753pedped" />
 
@@ -90,7 +89,7 @@
             android:id="@+id/acRegister_chb_Gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Male" />
+            android:text="@string/male" />
 
         <CheckBox
             android:id="@+id/acRegister_chb_Term"
@@ -98,8 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:checked="true"
-            android:text="I accept term of services" />
-
+            android:text="@string/i_accept_term_of_services" />
     </LinearLayout>
 
     <LinearLayout
@@ -108,13 +106,13 @@
         android:layout_weight="0"
         android:orientation="vertical" >
 
-        <Button
+        <com.corebase.element.CustomButton
             android:id="@+id/acRegister_btn_Register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register" />
+            android:text="@string/register" />
 
-        <Button
+        <com.corebase.element.CustomButton
             android:id="@+id/acRegister_btn_Login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

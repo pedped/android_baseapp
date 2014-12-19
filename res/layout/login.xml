@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.ata.coreapp.AC_Login" >
+    tools:context="com.ata.activity.AC_Login" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,34 +27,34 @@
             android:layout_weight="0"
             android:orientation="vertical" >
 
-            <com.ata.corebase.CustomEditText
+            <com.corebase.element.CustomEditText
                 android:id="@+id/acLogin_et_Email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:text="convertersoft@gmail.com" >
 
                 <requestFocus />
-            </com.ata.corebase.CustomEditText>
+            </com.corebase.element.CustomEditText>
 
-            <com.ata.corebase.CustomEditText
+            <com.corebase.element.CustomEditText
                 android:id="@+id/acLogin_et_Password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:text="1598753pedped" />
 
-            <com.ata.corebase.CustomButton
+            <com.corebase.element.CustomButton
                 android:id="@+id/acLogin_btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:layout_weight="1"
-                android:text="ورود" />
+                android:text="@string/login" />
         </LinearLayout>
     </LinearLayout>
 

@@ -8,10 +8,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ata.coreapp.ListActivity" >
 
-    <com.ata.corebase.UnlimitedListView
+    <com.corebase.unlimited.UnlimitedListView
         android:id="@+id/acList_lv_Master"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
-    </com.ata.corebase.UnlimitedListView>
+    </com.corebase.unlimited.UnlimitedListView>
 
 </LinearLayout>

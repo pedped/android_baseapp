@@ -5,7 +5,7 @@ import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.ata.coreapp.R;
+import com.ataalla.amlakgostar.R;
 import com.ata.corebase.CoreActivity;
 import com.ata.corebase.sf;
 import com.ata.events.InternetConnection;

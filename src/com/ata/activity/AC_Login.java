@@ -16,7 +16,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.ata.config.config;
-import com.ata.coreapp.R;
+import com.ataalla.amlakgostar.R;
 import com.ata.corebase.CoreActivity;
 import com.ata.corebase.ObjectParser;
 import com.ata.corebase.interfaces.OnResponseListener;

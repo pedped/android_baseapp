@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.ataalla.amlakgostar.R;
 import com.corebase.unlimited.UnlimitedAdapter.UnlimitListAdapterItem;
 import com.corebase.unlimited.UnlimitedAdapter.UnlimitListAdapterItem.UnlimitListAdapterItemType;
 import com.corebase.unlimited.UnlimitedList;

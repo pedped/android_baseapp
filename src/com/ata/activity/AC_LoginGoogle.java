@@ -29,7 +29,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.ata.coreapp.PlusBaseActivity;
-import com.ata.coreapp.R;
+import com.ataalla.amlakgostar.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.SignInButton;

@@ -7,12 +7,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.ata.config.config;
-import com.ata.coreapp.R;
-import com.ata.coreapp.R.id;
-import com.ata.coreapp.R.layout;
-import com.ata.coreapp.R.menu;
 import com.ata.corebase.CoreActivity;
 import com.ata.corebase.sf;
+import com.ataalla.amlakgostar.R;
 
 public class AC_ViewNotification extends CoreActivity {
 

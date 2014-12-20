@@ -1,6 +1,6 @@
 package com.ata.config;
 
-import com.ata.coreapp.R;
+import com.ataalla.amlakgostar.R;
 
 public class config {
 

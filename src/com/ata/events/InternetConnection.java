@@ -24,7 +24,7 @@ import android.util.Log;
 
 import com.ata.activity.AC_ViewNotification;
 import com.ata.config.config;
-import com.ata.coreapp.R;
+import com.ataalla.amlakgostar.R;
 import com.ata.corebase.interfaces.OnResponseListener;
 import com.ata.corebase.nc;
 import com.ata.corebase.sf;

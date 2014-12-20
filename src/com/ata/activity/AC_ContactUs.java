@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.ata.config.appinfo;
-import com.ata.coreapp.R;
+import com.ataalla.amlakgostar.R;
 import com.ata.corebase.CoreActivity;
 import com.ata.corebase.sf;
 import com.google.android.gms.maps.CameraUpdateFactory;

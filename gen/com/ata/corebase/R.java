@@ -408,7 +408,7 @@ public final class R {
 		public static final int end = 0x7f090025;
 		public static final int expand_activities_button = 0x7f090044;
 		public static final int expanded_menu = 0x7f09004a;
-		public static final int fl_inner = 0x7f090080;
+		public static final int fl_inner = 0x7f090081;
 		public static final int flip = 0x7f090034;
 		public static final int grayscale = 0x7f090012;
 		public static final int gridview = 0x7f090035;
@@ -422,7 +422,7 @@ public final class R {
 		public static final int image = 0x7f090045;
 		public static final int listMode = 0x7f090014;
 		public static final int list_item = 0x7f090047;
-		public static final int loadingview = 0x7f09007b;
+		public static final int loadingview = 0x7f09007c;
 		public static final int main = 0x7f09005a;
 		public static final int manualOnly = 0x7f090030;
 		public static final int match_parent = 0x7f09000c;
@@ -432,17 +432,17 @@ public final class R {
 		public static final int none = 0x7f090000;
 		public static final int normal = 0x7f090001;
 		public static final int production = 0x7f090007;
-		public static final int progressBar1 = 0x7f09007c;
+		public static final int progressBar1 = 0x7f09007d;
 		public static final int progress_circular = 0x7f09002a;
 		public static final int progress_horizontal = 0x7f09002b;
 		public static final int pullDownFromTop = 0x7f090031;
 		public static final int pullFromEnd = 0x7f09002e;
 		public static final int pullFromStart = 0x7f09002d;
 		public static final int pullUpFromBottom = 0x7f090032;
-		public static final int pull_to_refresh_image = 0x7f090081;
-		public static final int pull_to_refresh_progress = 0x7f090082;
-		public static final int pull_to_refresh_sub_text = 0x7f090084;
-		public static final int pull_to_refresh_text = 0x7f090083;
+		public static final int pull_to_refresh_image = 0x7f090082;
+		public static final int pull_to_refresh_progress = 0x7f090083;
+		public static final int pull_to_refresh_sub_text = 0x7f090085;
+		public static final int pull_to_refresh_text = 0x7f090084;
 		public static final int radio = 0x7f09004d;
 		public static final int rotate = 0x7f090033;
 		public static final int sandbox = 0x7f090008;
@@ -506,11 +506,11 @@ public final class R {
 		public static final int abc_search_dropdown_item_icons_2line = 0x7f030015;
 		public static final int abc_search_view = 0x7f030016;
 		public static final int abc_simple_decor = 0x7f030017;
-		public static final int loading = 0x7f03001f;
-		public static final int master = 0x7f030021;
-		public static final int pull_to_refresh_header_horizontal = 0x7f030022;
-		public static final int pull_to_refresh_header_vertical = 0x7f030023;
-		public static final int support_simple_spinner_dropdown_item = 0x7f030024;
+		public static final int loading = 0x7f030020;
+		public static final int master = 0x7f030022;
+		public static final int pull_to_refresh_header_horizontal = 0x7f030023;
+		public static final int pull_to_refresh_header_vertical = 0x7f030024;
+		public static final int support_simple_spinner_dropdown_item = 0x7f030025;
 	}
 	public static final class string {
 		public static final int abc_action_bar_home_description = 0x7f08001b;

@@ -40,7 +40,7 @@ public class AC_Home extends CoreActivity {
 		InternetConnection.checkForNotification(this);
 
 		// user is logged in or application do not require login
-		// startActivityWithName(AC_Register.class);
+		startActivityWithName(AC_Test.class);
 
 	}
 

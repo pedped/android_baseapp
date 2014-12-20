@@ -30,5 +30,6 @@
     <string name="login">Login</string>
     <string name="logout">Logout</string>
     <string name="contact_us">Contact US</string>
+    <string name="title_activity_ac__test">Test Activity</string>
 
 </resources>

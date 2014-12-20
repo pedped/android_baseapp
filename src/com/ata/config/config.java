@@ -9,7 +9,7 @@ public class config {
 	public static final long[] WebsiteNotificationVibratePattern = new long[] {
 			200, 200, 200, 200 };
 	public static final int NewWebsiteNotificationIcon = R.drawable.ic_launcher;
-	public static String requestUrl = "http://melk.edspace.org/api/";
+	public static String requestUrl = "http://amlak.edspace.org/api/";
 
 	public static final int NOTIFICAION_UPDATE_ID = 999;
 	public static final int NOTIFICATION_COLOR = 888888;

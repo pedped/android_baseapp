@@ -147,7 +147,7 @@ public class AC_Register extends CoreActivity {
 								loginResult.Store(AC_Register.this);
 
 								// go to the home page
-								startActivityWithName(AC_Home.class);
+								startActivityWithName(AC_Master.class);
 
 								// finish current page
 								finish();

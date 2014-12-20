@@ -105,7 +105,7 @@ public class AC_Login extends CoreActivity {
 								loginResult.Store(AC_Login.this);
 
 								// start home page,
-								startActivityWithName(AC_Home.class);
+								startActivityWithName(AC_Master.class);
 								finish();
 							}
 						} catch (Exception e) {

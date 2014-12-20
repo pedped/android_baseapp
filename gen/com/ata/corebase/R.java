@@ -422,8 +422,8 @@ public final class R {
 		public static final int image = 0x7f090045;
 		public static final int listMode = 0x7f090014;
 		public static final int list_item = 0x7f090047;
-		public static final int loadingview = 0x7f09007a;
-		public static final int main = 0x7f09007f;
+		public static final int loadingview = 0x7f09007b;
+		public static final int main = 0x7f09005a;
 		public static final int manualOnly = 0x7f090030;
 		public static final int match_parent = 0x7f09000c;
 		public static final int middle = 0x7f090024;
@@ -432,7 +432,7 @@ public final class R {
 		public static final int none = 0x7f090000;
 		public static final int normal = 0x7f090001;
 		public static final int production = 0x7f090007;
-		public static final int progressBar1 = 0x7f09007b;
+		public static final int progressBar1 = 0x7f09007c;
 		public static final int progress_circular = 0x7f09002a;
 		public static final int progress_horizontal = 0x7f09002b;
 		public static final int pullDownFromTop = 0x7f090031;
@@ -468,7 +468,7 @@ public final class R {
 		public static final int submit_area = 0x7f090057;
 		public static final int tabMode = 0x7f090015;
 		public static final int terrain = 0x7f090003;
-		public static final int textView1 = 0x7f09006c;
+		public static final int textView1 = 0x7f09006d;
 		public static final int title = 0x7f090049;
 		public static final int top_action_bar = 0x7f09003e;
 		public static final int up = 0x7f09003f;

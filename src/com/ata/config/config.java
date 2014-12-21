@@ -10,6 +10,8 @@ public class config {
 			200, 200, 200, 200 };
 	public static final int NewWebsiteNotificationIcon = R.drawable.ic_launcher;
 	public static String requestUrl = "http://amlak.edspace.org/api/";
+	public static String DATABASE_AMLAKDARKHASTI = "amlakdarkashti";
+	public static String DATABASE_AMLAK = "amlak";
 
 	public static final int NOTIFICAION_UPDATE_ID = 999;
 	public static final int NOTIFICATION_COLOR = 888888;

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="right"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_launcher"
+            android:tag="image" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:orientation="vertical" >
+
+        <com.corebase.element.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="type"
+            android:text="نوع" />
+
+        <com.corebase.element.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="purpose"
+            android:text="منظور" />
+
+        <com.corebase.element.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="price"
+            android:text="قیمت" />
+
+        <com.corebase.element.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="date"
+            android:text="تاریخ" />
+    </LinearLayout>
+
+</LinearLayout>

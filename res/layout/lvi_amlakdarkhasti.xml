@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="right"
+    android:orientation="vertical" >
+
+    <com.corebase.element.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tag="type"
+        android:text="نوع" />
+
+    <com.corebase.element.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tag="pricerange"
+        android:text="قیمت" />
+
+    <com.corebase.element.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tag="phone"
+        android:text="تلفن" />
+
+    <RatingBar
+        android:id="@+id/ratingBar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="false"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:tag="rate" />
+
+</LinearLayout>

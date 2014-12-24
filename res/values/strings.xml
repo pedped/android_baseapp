@@ -36,5 +36,8 @@
     <string name="title_section3">Section 3</string>
     <string name="add">Add</string>
     <string name="search">Search</string>
+    <string name="title_activity_ac__view_melk_request">مشاهده ملک درخواستی</string>
+    <string name="title_activity_ac__add_melk">افزدون ملک</string>
+    <string name="title_activity_ac__send_melk_info">ارسال اطلاعات ملک</string>
 
 </resources>

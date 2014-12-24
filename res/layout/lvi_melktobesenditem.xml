@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/listview_backround"
+    android:gravity="right"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/frMelkToBeSend_chb_Send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="16dp"
+        android:tag="sendcheck" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:orientation="vertical"
+        android:paddingBottom="4dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="4dp" >
+
+        <com.corebase.element.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="privateaddress"
+            android:text="آدرس"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal" >
+
+            <com.corebase.element.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:tag="price"
+                android:text="قیمت"
+                android:textColor="#777" />
+        </LinearLayout>
+
+        <com.corebase.element.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="area"
+            android:text="منطقه"
+            android:textColor="#777"
+            android:textSize="12sp" />
+
+        <com.corebase.element.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="date"
+            android:text="تاریخ"
+            android:textColor="#999"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,166 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="right"
+    android:orientation="vertical"
+    tools:context="com.ata.activity.AC_ViewMelkRequest" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_weight="1"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:orientation="vertical" >
+
+            <com.corebase.element.CustomTextView
+                android:id="@+id/acViewMelkRequest_txt_Header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:text="آپارتمان"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <com.corebase.element.CustomTextView
+                android:id="@+id/acViewMelkRequest_txt_Bedroom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="خواب" />
+
+            <com.corebase.element.CustomTextView
+                android:id="@+id/acViewMelkRequest_txt_Price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="قیمت" />
+
+            <com.corebase.element.CustomTextView
+                android:id="@+id/acViewMelkRequest_txt_Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تاریخ" />
+
+            <com.corebase.element.CustomTextView
+                android:id="@+id/acViewMelkRequest_txt_City"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="شهر" />
+
+            <com.corebase.element.CustomTextView
+                android:id="@+id/acViewMelkRequest_txt_Area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="محدوده" />
+
+            <com.corebase.element.CustomTextView
+                android:id="@+id/acViewMelkRequest_txt_PhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="شماره تماس"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#0b9d5a" />
+
+            <com.corebase.element.CustomButton
+                android:id="@+id/acViewMelkRequest_btn_ViewPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:text="مشاهده شماره تماس" />
+
+            <LinearLayout
+                android:id="@+id/acViewMelkRequest_ll_SendMelk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <com.corebase.element.CustomTextView
+                    android:id="@+id/acViewMelkRequest_txt_MelkCountInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="شما سه ملک متنساب با نیاز این مشتری در بنگاه خود دارید"
+                    android:textSize="16sp" />
+
+                <com.corebase.element.CustomButton
+                    android:id="@+id/acViewMelkRequest_btn_Send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="ارسال املاک به مشتری" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/acViewMelkRequest_ll_NoMelk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <com.corebase.element.CustomTextView
+                    android:id="@+id/acViewMelkRequest_txt_NoMelk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:textColor="#999"
+                    android:text="در حال حاضر ملکی متناسب با نیاز این شخص موجود ندارید، لطفا املاک خود را اضافه نمایید"
+                    android:textSize="16sp" />
+
+                <com.corebase.element.CustomButton
+                    android:id="@+id/acViewMelkRequest_btn_AddMelk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_weight="0"
+                    android:text="اضافه کردن ملک"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#e3e3e3"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="امتیاز املاک گستر به این مشتری"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <RatingBar
+            android:id="@+id/acViewMelkRequest_rb_Rate"
+            style="@style/smallratingbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="7" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -52,7 +52,8 @@ public class AC_ViewNotification extends CoreActivity {
 		// we have to remove notification and set last visit on
 		sf.cancelNotification(getContext(),
 				config.NOTIFICATIONID_WEBSITENOTIFICATION);
-		//sf.SettingManager_WriteString(this, "lastnotificationsee", date + "");
+		// sf.SettingManager_WriteString(this, "lastnotificationsee", date +
+		// "");
 
 	}
 

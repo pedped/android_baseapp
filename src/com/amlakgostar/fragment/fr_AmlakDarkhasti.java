@@ -1,14 +1,19 @@
 package com.amlakgostar.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
+import com.ata.activity.AC_ViewMelkRequest;
 import com.ata.config.config;
 import com.ataalla.amlakgostar.R;
+import com.corebase.interfaces.OnUnlimitedListClickListner;
 import com.corebase.unlimited.UnlimitedAdapter.UnlimitListAdapterItem;
 import com.corebase.unlimited.UnlimitedAdapter.UnlimitListAdapterItem.UnlimitListAdapterItemType;
 import com.corebase.unlimited.UnlimitedList;
@@ -16,6 +21,9 @@ import com.corebase.unlimited.UnlimitedList.DatabaseOrder;
 import com.corebase.unlimited.UnlimitedListView;
 
 public class fr_AmlakDarkhasti extends Fragment {
+
+	protected String TAG = "fr_AmlakDarkhasti";
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -34,6 +42,9 @@ public class fr_AmlakDarkhasti extends Fragment {
 
 		UnlimitedList ul = new UnlimitedList((Context) getActivity(),
 				unlimitedListView, R.layout.lvi_amlakdarkhasti);
+		
+		
+	
 
 		// use offline data when not exist
 		ul.setSwitchOffline(true);
@@ -49,18 +60,44 @@ public class fr_AmlakDarkhasti extends Fragment {
 		// link
 		ul.setLink("http://amlak.edspace.org/api/bongah/getmelkrequest");
 
+		// VIEWS
+		ul.getListView().setDividerHeight(0);
+		ul.getListView().setDivider(null);
+		
 		// set view item
-		ul.addItem("type", new UnlimitListAdapterItem("type", "type",
+		ul.addItem("header", new UnlimitListAdapterItem("header", "header",
 				UnlimitListAdapterItemType.TextView));
 
 		ul.addItem("pricerange", new UnlimitListAdapterItem("pricerange",
 				"pricerange", UnlimitListAdapterItemType.TextView));
 
-		ul.addItem("phone", new UnlimitListAdapterItem("phone", "phone",
+		// ul.addItem("phone", new UnlimitListAdapterItem("phone", "phone",
+		// UnlimitListAdapterItemType.TextView));
+
+		ul.addItem("date", new UnlimitListAdapterItem("date", "date",
 				UnlimitListAdapterItemType.TextView));
 
-		ul.addItem("rate", new UnlimitListAdapterItem("rate", "rate",
-				UnlimitListAdapterItemType.RatingBar));
+		ul.addItem("rate", new UnlimitListAdapterItem("melkscanbesentcount", "rate",
+				UnlimitListAdapterItemType.TextView));
+
+		// set on item click listner
+		ul.setOnItemClickListner(new OnUnlimitedListClickListner() {
+
+			@Override
+			public void onClickListner(String JsonItem, AdapterView<?> arg0,
+					View arg1, int arg2, long arg3) {
+
+				// start activity for intent
+				Intent intent = new Intent(getActivity(),
+						AC_ViewMelkRequest.class);
+				intent.putExtra("info", JsonItem);
+				startActivity(intent);
+
+				// log clicked melk info
+				Log.d(TAG, JsonItem);
+
+			}
+		});
 
 		// refresh the list
 		ul.Begin();

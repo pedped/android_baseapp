@@ -30,7 +30,7 @@ public class fr_Search extends Fragment {
 	private HashMap<String, String> hashFor;
 
 	private boolean fetchInformation;
-
+ 
 	private View rootView;
 
 	@Override

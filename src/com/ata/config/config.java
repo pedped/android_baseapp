@@ -16,5 +16,7 @@ public class config {
 	public static final int NOTIFICAION_UPDATE_ID = 999;
 	public static final int NOTIFICATION_COLOR = 888888;
 	public static final int NOTIFICATION_DRAWABLE = R.drawable.ic_launcher;
+	public static final int NOTIFICATION_NEWREQUEST = R.drawable.ic_launcher;
+	public static final int NOTIFICATION_NEWREQUEST_ID = 1001;
 
 }

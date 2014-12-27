@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ata.activity.AC_SearchResult" >
+
+    <com.corebase.unlimited.UnlimitedListView
+        android:id="@+id/acSearchResult_ul_Master"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+    </com.corebase.unlimited.UnlimitedListView>
+
+    <LinearLayout
+        android:id="@+id/acSearchResult_ll_SendToPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="#fff"
+        android:orientation="vertical"
+        android:padding="8dp" >
+
+        <com.corebase.element.CustomTextView
+            android:id="@+id/customTextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="0"
+            android:text="جهت ارسال اطلاعات املاک به مشتری، شماره مشتری را وارد نمایید و بر روی کلید ارسال را فشار دهید" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:orientation="horizontal" >
+
+            <com.corebase.element.CustomButton
+                android:id="@+id/acSearchResult_btn_Send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ارسال" />
+
+            <EditText
+                android:id="@+id/acSearchResult_et_Phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="phone" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

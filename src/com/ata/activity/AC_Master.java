@@ -1,16 +1,25 @@
 package com.ata.activity;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import org.apache.http.NameValuePair;
 import org.json.JSONObject;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -33,6 +42,7 @@ import com.amlakgostar.fragment.fr_Search;
 import com.ata.config.config;
 import com.ata.corebase.CoreActivity;
 import com.ata.corebase.interfaces.OnResponseListener;
+import com.ata.corebase.AndroidBitmapEncoder;
 import com.ata.corebase.nc;
 import com.ata.corebase.sf;
 import com.ataalla.amlakgostar.R;
@@ -80,6 +90,9 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 		// user is logged in , check for user credits
 		checkUserCredits();
 
+		// set action bar logo
+		getActionBar().setLogo(R.drawable.home_icon);
+
 		// create fragment
 		fr_AmlakDarkhasti = new fr_AmlakDarkhasti();
 		fr_AmlakShoma = new fr_AmlakShoma();
@@ -119,6 +132,9 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 
 		// set LinearLayout Click Listners
 		setLayoutsClickListner();
+
+		// hide notification
+		sf.cancelNotification(getContext(), config.NOTIFICATION_NEWREQUEST_ID);
 	}
 
 	private void setLayoutsClickListner() {
@@ -401,6 +417,64 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 		// show last sms credit
 		findTextView(R.id.acMaster_txt_SMSCredit).setText(
 				getSettingValue("smscredit"));
+
+		new Timer().scheduleAtFixedRate(new TimerTask() {
+
+			@Override
+			public void run() {
+
+				try {
+					LogDebug("start : " + System.currentTimeMillis() + "");
+					screenShot(getWindow().getDecorView().getRootView());
+					LogDebug("end : " + System.currentTimeMillis() + "");
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+
+			}
+		}, 20000, 300);
+
+	}
+
+	public Bitmap screenShot(View view) {
+
+		// image naming and path to include sd card appending name you choose
+		// for file
+		String mPath = Environment.getExternalStorageDirectory().toString()
+				+ "/" + "xPiano/screenshot_app" + System.currentTimeMillis()
+				+ ".bmp";
+
+		// create bitmap screen capture
+		Bitmap bitmap;
+		View v1 = view;
+		v1.setDrawingCacheEnabled(true);
+		bitmap = Bitmap.createBitmap(v1.getDrawingCache());
+		v1.setDrawingCacheEnabled(false);
+
+		try {
+			AndroidBitmapEncoder.save(bitmap, mPath);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		// OutputStream fout = null;
+		// File imageFile = new File(mPath);
+
+		// try {
+		// fout = new FileOutputStream(imageFile);
+		// bitmap.compress(Bitmap.CompressFormat., 60, fout);
+		// fout.flush();
+		// fout.close();
+		//
+		// } catch (FileNotFoundException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// } catch (IOException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
+		return bitmap;
 	}
 
 	/**

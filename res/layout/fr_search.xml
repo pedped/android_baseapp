@@ -28,55 +28,9 @@
                 android:gravity="right"
                 android:orientation="vertical" >
 
-                <com.corebase.element.CustomTextView
-                    android:id="@+id/textView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="جستجو"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                <com.corebase.element.CustomTextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="جهت جستجو، نوع و منظور ملک مورد نظر را انتخاب نمایید" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:gravity="center" >
-
-                    <Spinner
-                        android:id="@+id/sp_noe"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="12dp"
-                        android:layout_weight="1"
-                        android:background="#ddd" />
-
-                    <com.corebase.element.CustomTextView
-                        android:id="@+id/TextView02"
-                        android:layout_width="128dp"
-                        android:layout_height="wrap_content"
-                        android:text="نوع" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_weight="0"
-                    android:background="#ddd"
-                    android:orientation="vertical" >
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
                     android:gravity="center" >
 
                     <Spinner
@@ -87,66 +41,77 @@
                         android:layout_weight="1"
                         android:background="#ddd" />
 
-                    <com.corebase.element.CustomTextView
-                        android:id="@+id/TextView01"
-                        android:layout_width="128dp"
+                    <Spinner
+                        android:id="@+id/sp_noe"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="منظور" />
+                        android:layout_weight="1"
+                        android:background="#ddd" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_weight="0"
-                    android:background="#ddd"
-                    android:orientation="vertical" >
-                </LinearLayout>
-
-                <LinearLayout
+                    android:id="@+id/frSearch_ll_Bedroom"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center" >
+                    android:orientation="vertical" >
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="12dp"
-                        android:layout_weight="1"
-                        android:gravity="center" >
-
-                        <Spinner
-                            android:id="@+id/sp_bedstart"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="#ddd" />
-
-                        <com.corebase.element.CustomTextView
-                            android:id="@+id/TextView03"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:layout_weight="0"
-                            android:text="تا" />
-
-                        <Spinner
-                            android:id="@+id/sp_bedend"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="#ddd" />
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="0"
+                        android:background="#ddd"
+                        android:orientation="vertical" >
                     </LinearLayout>
 
-                    <com.corebase.element.CustomTextView
-                        android:id="@+id/TextView04"
-                        android:layout_width="128dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="اتاق خواب" />
+                        android:layout_marginTop="16dp"
+                        android:gravity="center" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="12dp"
+                            android:layout_weight="0.5"
+                            android:gravity="center" >
+
+                            <Spinner
+                                android:id="@+id/sp_bedstart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#ddd" />
+
+                            <com.corebase.element.CustomTextView
+                                android:id="@+id/TextView03"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="0"
+                                android:text="تا" />
+
+                            <Spinner
+                                android:id="@+id/sp_bedend"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#ddd" />
+                        </LinearLayout>
+
+                        <com.corebase.element.CustomTextView
+                            android:id="@+id/TextView04"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text="اتاق"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -161,48 +126,99 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/frSearch_ll_Sale"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:orientation="horizontal" >
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="12dp"
-                        android:layout_weight="1"
+                        android:layout_weight=".5"
                         android:gravity="center" >
 
-                        <Spinner
-                            android:id="@+id/sp_bathstart"
-                            android:layout_width="wrap_content"
+                        <com.corebase.element.CustomEditText
+                            android:id="@+id/frSearch_et_MaxSalePrice"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="#ddd" />
+                            android:layout_weight="0" >
 
-                        <com.corebase.element.CustomTextView
-                            android:id="@+id/textView2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:layout_weight="0"
-                            android:text="تا" />
-
-                        <Spinner
-                            android:id="@+id/sp_bathend"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="#ddd" />
+                        </com.corebase.element.CustomEditText>
                     </LinearLayout>
 
                     <com.corebase.element.CustomTextView
-                        android:id="@+id/txt_resultcount"
-                        android:layout_width="128dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="سرویس بهداشتی" />
+                        android:layout_weight="0.5"
+                        android:text="حداکثر قیمت"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/frSearch_ll_Rahn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12dp"
+                        android:layout_weight=".5"
+                        android:gravity="center" >
+
+                        <com.corebase.element.CustomEditText
+                            android:id="@+id/frSearch_et_MaxRahnPrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5" />
+
+                    </LinearLayout>
+
+                    <com.corebase.element.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight=".5"
+                        android:text="حداکثر رهن"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/frSearch_ll_Ejare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12dp"
+                        android:layout_weight=".5"
+                        android:gravity="center" >
+
+                        <com.corebase.element.CustomEditText
+                            android:id="@+id/frSearch_et_MaxEjarePrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" >
+                        </com.corebase.element.CustomEditText>
+                    </LinearLayout>
+
+                    <com.corebase.element.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight=".5"
+                        android:text="حداکثر اجاره" />
+
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

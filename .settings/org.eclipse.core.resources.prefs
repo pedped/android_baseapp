@@ -1,7 +1,9 @@
 eclipse.preferences.version=1
+encoding//src/com/amlakgostar/classes/AmlakGostarRequestManager.java=UTF-8
 encoding//src/com/amlakgostar/fragment/fr_Search.java=UTF-8
 encoding//src/com/ata/activity/AC_ContactUs.java=UTF-8
 encoding//src/com/ata/activity/AC_Master.java=UTF-8
 encoding//src/com/ata/activity/AC_Register.java=UTF-8
+encoding//src/com/ata/activity/AC_SearchResult.java=UTF-8
 encoding//src/com/ata/activity/AC_SendMelkInfo.java=UTF-8
 encoding//src/com/ata/activity/AC_ViewMelkRequest.java=UTF-8

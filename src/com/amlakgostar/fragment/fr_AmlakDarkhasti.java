@@ -1,5 +1,10 @@
 package com.amlakgostar.fragment;
 
+import java.util.List;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,12 +17,15 @@ import android.widget.AdapterView;
 
 import com.ata.activity.AC_ViewMelkRequest;
 import com.ata.config.config;
+import com.ata.corebase.sf;
 import com.ataalla.amlakgostar.R;
 import com.corebase.interfaces.OnUnlimitedListClickListner;
+import com.corebase.interfaces.OnUnlimitedListLoadListner;
 import com.corebase.unlimited.UnlimitedAdapter.UnlimitListAdapterItem;
 import com.corebase.unlimited.UnlimitedAdapter.UnlimitListAdapterItem.UnlimitListAdapterItemType;
 import com.corebase.unlimited.UnlimitedList;
 import com.corebase.unlimited.UnlimitedList.DatabaseOrder;
+import com.corebase.unlimited.UnlimitedList.ItemObject;
 import com.corebase.unlimited.UnlimitedListView;
 
 public class fr_AmlakDarkhasti extends Fragment {
@@ -42,9 +50,6 @@ public class fr_AmlakDarkhasti extends Fragment {
 
 		UnlimitedList ul = new UnlimitedList((Context) getActivity(),
 				unlimitedListView, R.layout.lvi_amlakdarkhasti);
-		
-		
-	
 
 		// use offline data when not exist
 		ul.setSwitchOffline(true);
@@ -63,7 +68,7 @@ public class fr_AmlakDarkhasti extends Fragment {
 		// VIEWS
 		ul.getListView().setDividerHeight(0);
 		ul.getListView().setDivider(null);
-		
+
 		// set view item
 		ul.addItem("header", new UnlimitListAdapterItem("header", "header",
 				UnlimitListAdapterItemType.TextView));
@@ -77,8 +82,8 @@ public class fr_AmlakDarkhasti extends Fragment {
 		ul.addItem("date", new UnlimitListAdapterItem("date", "date",
 				UnlimitListAdapterItemType.TextView));
 
-		ul.addItem("rate", new UnlimitListAdapterItem("melkscanbesentcount", "rate",
-				UnlimitListAdapterItemType.TextView));
+		ul.addItem("rate", new UnlimitListAdapterItem("melkscanbesentcount",
+				"rate", UnlimitListAdapterItemType.TextView));
 
 		// set on item click listner
 		ul.setOnItemClickListner(new OnUnlimitedListClickListner() {
@@ -95,6 +100,46 @@ public class fr_AmlakDarkhasti extends Fragment {
 
 				// log clicked melk info
 				Log.d(TAG, JsonItem);
+
+			}
+		});
+
+		// set on load listener
+		ul.setOnLoadListner(new OnUnlimitedListLoadListner() {
+
+			@Override
+			public void onMoreLoad(List<ItemObject> items) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void onFirstLoad(List<ItemObject> items) {
+
+				// the first item is the last request from server, we have to
+				// store that in settings manager, it will be used in feature
+				// for retiring new notification
+				if (items.size() > 0) {
+					try {
+
+						String id = new JSONObject(items.get(0).jsonObject)
+								.getString("id");
+						// check id with internal settings value
+						String lastSeenID = sf.SettingManager_ReadString(
+								(Context) getActivity(), "lastrequestseen");
+						int lastNotificationSeen = Integer.valueOf(lastSeenID);
+
+						// compare result
+						if (lastNotificationSeen < Integer.valueOf(id)) {
+							// we have to set new notification seen
+							sf.SettingManager_WriteString(getActivity(),
+									"lastrequestseen", id);
+						}
+					} catch (JSONException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
 
 			}
 		});

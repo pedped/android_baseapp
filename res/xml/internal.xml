@@ -26,5 +26,8 @@
     <EditTextPreference
         android:defaultValue="0"
         android:key="melkcount" />
+    <EditTextPreference
+        android:defaultValue="0"
+        android:key="lastrequestseen" />
 
 </PreferenceScreen>

@@ -1,17 +1,14 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-
-
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-
+            backward-compatibility can go here.
         -->
     </style>
 
@@ -20,16 +17,125 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <style name="MyAppCompatDialogTheme" parent="AppTheme">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
     <style name="ac_items_title" parent="android:Widget.Holo.Light.TextView">
         <item name="android:layout_marginTop">12dp</item>
         <item name="android:textSize">18sp</item>
         <item name="android:layout_width">match_parent</item>
     </style>
-    
-     <style name="smallratingbar" parent="@android:style/Widget.RatingBar">
-       <item name="android:progressDrawable">@drawable/ratingbar</item>
-       <item name="android:minHeight">23dip</item>
-       <item name="android:maxHeight">25dip</item>
-   </style>
+
+    <style name="smallratingbar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingbar</item>
+        <item name="android:minHeight">23dip</item>
+        <item name="android:maxHeight">25dip</item>
+    </style>
+
+    <style name="property_inofholder">
+        <item name="android:gravity">right</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:paddingTop">4dp</item>
+    </style>
+
+    <style name="property_info">
+        <item name="android:gravity">right</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingRight">18dp</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="property_title">
+        <item name="android:paddingLeft">1dp</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="acAddMelk_group_back">
+        <item name="android:background">@drawable/listview_backround</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:gravity">right</item>
+    </style>
+
+    <style name="acAddMelk_Header">
+        <item name="android:background">#eee</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:textColor">#56a</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+    </style>
+
+    <style name="acAddMelk_ItemHeader">
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:layout_marginTop">14dp</item>
+        <item name="android:textColor">#aaa</item>
+    </style>
+
+    <style name="acAddMelk_EditText">
+        <item name="android:ems">10</item>
+        <item name="android:gravity">right|center_vertical</item>
+    </style>
+
+    <style name="acRegister_ItemHeader">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginRight">4dp</item>
+        <item name="android:textColor">#777</item>
+    </style>
+
+    <style name="acRegister_EditText">
+        <item name="android:gravity">right</item>
+    </style>
+
+    <style name="acRegister_GroupHolder">
+        <item name="android:background">@drawable/listview_backround</item>
+        <item name="android:gravity">right</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingBottom">21dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="acRegister_InsideGroupHolder">
+        <item name="android:gravity">right</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingLeft">14dp</item>
+        <item name="android:paddingRight">14dp</item>
+        <item name="android:paddingTop">14dp</item>
+    </style>
+
+    <style name="acRegister_GroupHeaderHolder">
+        <item name="android:background">#eee</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="acRegister_GroupHeader">
+        <item name="android:gravity">right</item>
+        <item name="android:textColor">#bf2a13</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="btnprimary">
+        <item name="android:background">@drawable/primarybutton</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="btndefault" parent="@style/btnprimary">
+        <item name="android:background">@drawable/nullbutton</item>
+        <item name="android:textColor">#d50409</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+    </style>
 
 </resources>

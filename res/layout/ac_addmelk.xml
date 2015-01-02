@@ -1,16 +1,416 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:gravity="right"
+    android:orientation="vertical"
     tools:context="com.ata.activity.AC_AddMelk" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+    <ScrollView
+        android:id="@+id/acAddMelk_scrollView_Scroller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/acAddMelk_group_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <com.corebase.element.CustomTextView
+                    style="@style/acAddMelk_Header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="مشخصات کلی ملک" />
+
+                <com.corebase.element.CustomTextView
+                    style="@style/acAddMelk_ItemHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="نوع ملک" />
+
+                <Spinner
+                    android:id="@+id/acAddMelk_sp_Type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#ddd"
+                    android:gravity="right" />
+
+                <com.corebase.element.CustomTextView
+                    style="@style/acAddMelk_ItemHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="منظور" />
+
+                <Spinner
+                    android:id="@+id/acAddMelk_sp_Purpose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#ddd"
+                    android:gravity="right" />
+
+                <LinearLayout
+                    android:id="@+id/acAddMelk_ll_Metraj"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="vertical" >
+
+                    <com.corebase.element.CustomTextView
+                        style="@style/acAddMelk_ItemHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="متراژ" />
+
+                    <com.corebase.element.CustomEditText
+                        android:id="@+id/acAddMelk_et_MetrajZamin"
+                        style="@style/acAddMelk_EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:text="150" >
+
+                        <requestFocus />
+
+                    </com.corebase.element.CustomEditText>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/acAddMelk_ll_Zirbana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:orientation="vertical" >
+
+                    <com.corebase.element.CustomTextView
+                        style="@style/acAddMelk_ItemHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="زیربنا" />
+
+                    <com.corebase.element.CustomEditText
+                        android:id="@+id/acAddMelk_et_zirbana"
+                        style="@style/acAddMelk_EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:text="60" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/acAddMelk_ll_Bedroom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="vertical" >
+
+                    <com.corebase.element.CustomTextView
+                        style="@style/acAddMelk_ItemHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="تعداد اتاق" />
+
+                    <com.corebase.element.CustomEditText
+                        android:id="@+id/acAddMelk_et_Bedroom"
+                        style="@style/acAddMelk_EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/acAddMelk_ll_Bath"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="vertical" >
+
+                    <com.corebase.element.CustomTextView
+                        style="@style/acAddMelk_ItemHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="حمام و دستشویی" />
+
+                    <com.corebase.element.CustomEditText
+                        android:id="@+id/acAddMelk_et_Bath"
+                        style="@style/acAddMelk_EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="3" />
+
+                </LinearLayout>
+
+                <com.corebase.element.CustomTextView
+                    style="@style/acAddMelk_ItemHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="توضیحات" />
+
+                <com.corebase.element.CustomEditText
+                    android:id="@+id/acAddMelk_et_Description"
+                    style="@style/acAddMelk_EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:text="خیلی ملک خوبی هست" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/acAddMelk_group_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <com.corebase.element.CustomTextView
+                    android:id="@+id/textView1"
+                    style="@style/acAddMelk_Header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="قیمت"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <LinearLayout
+                    android:id="@+id/acAddMelk_ll_SalePrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="vertical" >
+
+                    <com.corebase.element.CustomTextView
+                        style="@style/acAddMelk_ItemHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="قیمت فروش" />
+
+                    <com.corebase.element.CustomEditText
+                        android:id="@+id/acAddMelk_et_SalePrice"
+                        style="@style/acAddMelk_EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:text="200" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/acAddMelk_ll_Rahn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="vertical" >
+
+                    <com.corebase.element.CustomTextView
+                        style="@style/acAddMelk_ItemHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="رهن" />
+
+                    <com.corebase.element.CustomEditText
+                        android:id="@+id/acAddMelk_et_Rahn"
+                        style="@style/acAddMelk_EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:text="50" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/acAddMelk_ll_Ejare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="vertical" >
+
+                    <com.corebase.element.CustomTextView
+                        style="@style/acAddMelk_ItemHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="اجاره" />
+
+                    <com.corebase.element.CustomEditText
+                        android:id="@+id/acAddMelk_et_Ejare"
+                        style="@style/acAddMelk_EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:text=".1" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/acAddMelk_group_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <com.corebase.element.CustomTextView
+                    android:id="@+id/TextView01"
+                    style="@style/acAddMelk_Header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="اطلاعات تماس"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <com.corebase.element.CustomTextView
+                    style="@style/acAddMelk_ItemHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="شماره تلفن ثابت صاحب ملک" />
+
+                <com.corebase.element.CustomEditText
+                    android:id="@+id/acAddMelk_et_Phone"
+                    style="@style/acAddMelk_EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:text="62656415" />
+
+                <com.corebase.element.CustomTextView
+                    style="@style/acAddMelk_ItemHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="شماره موبایل صاحب ملک" />
+
+                <com.corebase.element.CustomEditText
+                    android:id="@+id/acAddMelk_et_Mobile"
+                    style="@style/acAddMelk_EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:text="09399477290" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/acAddMelk_group_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <com.corebase.element.CustomTextView
+                    android:id="@+id/TextView02"
+                    style="@style/acAddMelk_Header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="موقعیت ملک"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <com.corebase.element.CustomTextView
+                    style="@style/acAddMelk_ItemHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="استان" />
+
+                <Spinner
+                    android:id="@+id/acAddMelk_sp_State"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="#fff" />
+
+                <com.corebase.element.CustomTextView
+                    style="@style/acAddMelk_ItemHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="شهر" />
+
+                <Spinner
+                    android:id="@+id/acAddMelk_sp_City"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="#fff" />
+
+                <com.corebase.element.CustomTextView
+                    style="@style/acAddMelk_ItemHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="بلوار اصلی" />
+
+                <com.corebase.element.CustomEditText
+                    android:id="@+id/acAddMelk_et_Blvd"
+                    style="@style/acAddMelk_EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="فرهنگ شهر" />
+
+                <com.corebase.element.CustomTextView
+                    style="@style/acAddMelk_ItemHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="آدرس" />
+
+                <com.corebase.element.CustomEditText
+                    android:id="@+id/acAddMelk_et_Address"
+                    style="@style/acAddMelk_EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:text="سجادیه 4، کوچه 8" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/acAddMelk_group_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <com.corebase.element.CustomTextView
+                    android:id="@+id/TextView03"
+                    style="@style/acAddMelk_Header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="تصاویر ملک"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <com.corebase.element.CustomButton
+                    android:id="@+id/acAddMelk_btn_AddImage"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="افزدون تصویر" />
+
+                <com.daimajia.slider.library.SliderLayout
+                    android:id="@+id/acAddmelk_slider_Master"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp" />
+
+                <ListView
+                    android:id="@+id/acAddMelk_lv_ImageList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                </ListView>
+            </LinearLayout>
+
+            <com.corebase.element.CustomButton
+                android:id="@+id/acAddMelk_btn_Add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Button" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

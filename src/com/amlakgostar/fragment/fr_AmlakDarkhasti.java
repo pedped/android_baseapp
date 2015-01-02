@@ -134,6 +134,7 @@ public class fr_AmlakDarkhasti extends Fragment {
 							// we have to set new notification seen
 							sf.SettingManager_WriteString(getActivity(),
 									"lastrequestseen", id);
+							
 						}
 					} catch (JSONException e) {
 						// TODO Auto-generated catch block

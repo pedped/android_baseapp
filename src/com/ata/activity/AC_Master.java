@@ -1,10 +1,6 @@
 package com.ata.activity;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -16,6 +12,7 @@ import org.json.JSONObject;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -40,9 +37,9 @@ import com.amlakgostar.fragment.fr_AmlakDarkhasti;
 import com.amlakgostar.fragment.fr_AmlakShoma;
 import com.amlakgostar.fragment.fr_Search;
 import com.ata.config.config;
+import com.ata.corebase.AndroidBitmapEncoder;
 import com.ata.corebase.CoreActivity;
 import com.ata.corebase.interfaces.OnResponseListener;
-import com.ata.corebase.AndroidBitmapEncoder;
 import com.ata.corebase.nc;
 import com.ata.corebase.sf;
 import com.ataalla.amlakgostar.R;
@@ -74,7 +71,7 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 		if (sf.requireUserLogin(this) && !sf.isUserLoggedIn(this)) {
 
 			// request login
-			startActivityWithName(AC_Login.class);
+			startActivityWithName(AC_Intro.class);
 
 			// finish activity
 			finish();
@@ -347,6 +344,8 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 			});
 		} else if (id == R.id.action_contactus) {
 			startActivityWithName(AC_ContactUs.class);
+		} else if (id == R.id.action_add) {
+			startActivityWithName(AC_AddMelk.class);
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -418,21 +417,10 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 		findTextView(R.id.acMaster_txt_SMSCredit).setText(
 				getSettingValue("smscredit"));
 
-		new Timer().scheduleAtFixedRate(new TimerTask() {
-
-			@Override
-			public void run() {
-
-				try {
-					LogDebug("start : " + System.currentTimeMillis() + "");
-					screenShot(getWindow().getDecorView().getRootView());
-					LogDebug("end : " + System.currentTimeMillis() + "");
-				} catch (Exception e) {
-					// TODO: handle exception
-				}
-
-			}
-		}, 20000, 300);
+		// check user credit
+		if (sf.hasConnection(getContext())) {
+			checkUserCredits();
+		}
 
 	}
 

@@ -1,22 +1,30 @@
 package com.amlakgostar.fragment;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 
+import com.ata.activity.AC_AddMelk;
+import com.ata.activity.AC_ViewMelk;
 import com.ata.config.config;
 import com.ataalla.amlakgostar.R;
 import com.corebase.interfaces.OnUnlimitedListClickListner;
-import com.corebase.unlimited.UnlimitedList;
-import com.corebase.unlimited.UnlimitedListView;
 import com.corebase.unlimited.UnlimitedAdapter.UnlimitListAdapterItem;
 import com.corebase.unlimited.UnlimitedAdapter.UnlimitListAdapterItem.UnlimitListAdapterItemType;
+import com.corebase.unlimited.UnlimitedList;
 import com.corebase.unlimited.UnlimitedList.DatabaseOrder;
+import com.corebase.unlimited.UnlimitedListView;
 
 public class fr_AmlakShoma extends Fragment {
 
@@ -32,6 +40,17 @@ public class fr_AmlakShoma extends Fragment {
 		// load melks
 		loadMelks((UnlimitedListView) rootView
 				.findViewById(R.id.frAmlakShoma_lv_Master));
+
+		// click listener on add melk
+		((Button) rootView.findViewById(R.id.frAmlakShoma_btn_AddMelk))
+				.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View arg0) {
+						startActivity(new Intent(getActivity(),
+								AC_AddMelk.class));
+					}
+				});
 
 		return rootView;
 	}
@@ -83,6 +102,17 @@ public class fr_AmlakShoma extends Fragment {
 					View arg1, int arg2, long arg3) {
 
 				Log.d(TAG, JsonItem);
+
+				// Start View Melk
+				Intent intent = new Intent(getActivity(), AC_ViewMelk.class);
+				try {
+					intent.putExtra("melkid",
+							(new JSONObject(JsonItem)).getString("id"));
+					startActivity(intent);
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 
 			}
 		});

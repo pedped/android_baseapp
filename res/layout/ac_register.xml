@@ -3,6 +3,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="right"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -10,114 +11,312 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ata.activity.AC_Register" >
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical" >
-
-        <com.corebase.element.CustomTextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/register"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <com.corebase.element.CustomTextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/please_fill_all_information_to_signup_to_application" />
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-            <com.corebase.element.CustomEditText
-                android:id="@+id/acRegister_et_FirstName"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/acRegister_GroupHolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        style="@style/acRegister_GroupHeaderHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <com.corebase.element.CustomTextView
+                            android:id="@+id/customTextView2"
+                            style="@style/acRegister_GroupHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="مشخصات مشاور املاک" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/acRegister_InsideGroupHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <com.corebase.element.CustomTextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="right"
+                            android:text="برای استفاده از امکانات برنامه، ابتدا مشخصات خود را جهت ثبت نام وارد نمایید" />
+
+                        <com.corebase.element.CustomTextView
+                            android:id="@+id/CustomTextView02"
+                            style="@style/acRegister_ItemHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="نام مشاور املاک" />
+
+                        <com.corebase.element.CustomEditText
+                            android:id="@+id/acRegister_et_Title"
+                            style="@style/acRegister_EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:text="املاک سعید" >
+
+                            <requestFocus />
+                        </com.corebase.element.CustomEditText>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".5"
+                                android:gravity="right"
+                                android:orientation="vertical" >
+
+                                <com.corebase.element.CustomTextView
+                                    android:id="@+id/CustomTextView08"
+                                    style="@style/acRegister_ItemHeader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="شهر" />
+
+                                <Spinner
+                                    android:id="@+id/acRegister_sp_City"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="right"
+                                android:layout_weight=".5"
+                                android:gravity="right"
+                                android:orientation="vertical" >
+
+                                <com.corebase.element.CustomTextView
+                                    android:id="@+id/CustomTextView07"
+                                    style="@style/acRegister_ItemHeader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="استان" />
+
+                                <Spinner
+                                    android:id="@+id/acRegister_sp_State"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <com.corebase.element.CustomTextView
+                            android:id="@+id/CustomTextView06"
+                            style="@style/acRegister_ItemHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="آدرس" />
+
+                        <com.corebase.element.CustomEditText
+                            android:id="@+id/acRegister_et_Address"
+                            style="@style/acRegister_EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textImeMultiLine"
+                            android:text="خیابان نواب، کوچه 20 شمالی" />
+
+                        <com.corebase.element.CustomTextView
+                            android:id="@+id/CustomTextView09"
+                            style="@style/acRegister_ItemHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="شماره تلفن بنگاه" />
+
+                        <com.corebase.element.CustomEditText
+                            android:id="@+id/acRegister_et_ShomareSabet"
+                            style="@style/acRegister_EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="phone"
+                            android:text="512645122" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/acRegister_GroupHolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        style="@style/acRegister_GroupHeaderHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <com.corebase.element.CustomTextView
+                            android:id="@+id/customTextView3"
+                            style="@style/acRegister_GroupHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="مشخصات فردی و ورود به سامانه" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/acRegister_InsideGroupHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".5"
+                                android:gravity="right"
+                                android:orientation="vertical" >
+
+                                <com.corebase.element.CustomTextView
+                                    android:id="@+id/CustomTextView01"
+                                    style="@style/acRegister_ItemHeader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="نام خانوادگی" />
+
+                                <com.corebase.element.CustomEditText
+                                    android:id="@+id/acRegister_et_LastName"
+                                    style="@style/acRegister_EditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="textPersonName"
+                                    android:text="Zangene" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".5"
+                                android:gravity="right"
+                                android:orientation="vertical" >
+
+                                <com.corebase.element.CustomTextView
+                                    android:id="@+id/customTextView1"
+                                    style="@style/acRegister_ItemHeader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="نام" />
+
+                                <com.corebase.element.CustomEditText
+                                    android:id="@+id/acRegister_et_FirstName"
+                                    style="@style/acRegister_EditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:inputType="textPersonName"
+                                    android:text="Ata" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <com.corebase.element.CustomTextView
+                            android:id="@+id/CustomTextView05"
+                            style="@style/acRegister_ItemHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="شماره تماس" />
+
+                        <com.corebase.element.CustomEditText
+                            android:id="@+id/acRegister_et_Phone"
+                            style="@style/acRegister_EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="phone"
+                            android:text="09399477290" />
+
+                        <com.corebase.element.CustomTextView
+                            android:id="@+id/CustomTextView03"
+                            style="@style/acRegister_ItemHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ایمیل" />
+
+                        <com.corebase.element.CustomEditText
+                            android:id="@+id/acRegister_et_Email"
+                            style="@style/acRegister_EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textEmailAddress"
+                            android:text="convertersoft@gmail.com" />
+
+                        <com.corebase.element.CustomTextView
+                            android:id="@+id/CustomTextView04"
+                            style="@style/acRegister_ItemHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="رمز عبور" />
+
+                        <com.corebase.element.CustomEditText
+                            android:id="@+id/acRegister_et_Password"
+                            style="@style/acRegister_EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textPassword"
+                            android:text="1598753pedped" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.corebase.element.CustomCheckBox
+                    android:id="@+id/acRegister_chb_Term"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:checked="true"
+                    android:text="@string/i_accept_term_of_services" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:ems="10"
-                android:hint="@string/first_name"
-                android:inputType="textPersonName"
-                android:text="Ata" >
+                android:layout_weight="0"
+                android:orientation="vertical" >
 
-                <requestFocus />
-            </com.corebase.element.CustomEditText>
-
-            <com.corebase.element.CustomEditText
-                android:id="@+id/acRegister_et_LastName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:ems="10"
-                android:hint="@string/last_name"
-                android:inputType="textPersonName"
-                android:text="Zangene" />
+                <com.corebase.element.CustomButton
+                    android:id="@+id/acRegister_btn_Register"
+                    style="@style/btnprimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="8dp"
+                    android:text="ثبت نام" />
+            </LinearLayout>
         </LinearLayout>
-
-        <com.corebase.element.CustomEditText
-            android:id="@+id/acRegister_et_Phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/phone_number"
-            android:inputType="phone"
-            android:text="9399477295" />
-
-        <com.corebase.element.CustomEditText
-            android:id="@+id/acRegister_et_Email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            android:text="convertersoft@gmail.com" />
-
-        <com.corebase.element.CustomEditText
-            android:id="@+id/acRegister_et_Password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:text="1598753pedped" />
-
-        <CheckBox
-            android:id="@+id/acRegister_chb_Gender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/male" />
-
-        <CheckBox
-            android:id="@+id/acRegister_chb_Term"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:checked="true"
-            android:text="@string/i_accept_term_of_services" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:orientation="vertical" >
-
-        <com.corebase.element.CustomButton
-            android:id="@+id/acRegister_btn_Register"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/register" />
-
-        <com.corebase.element.CustomButton
-            android:id="@+id/acRegister_btn_Login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Login" />
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.ata.config.config;
 import com.ataalla.amlakgostar.R;
@@ -23,15 +24,22 @@ import com.ata.corebase.interfaces.OnResponseListener;
 import com.ata.corebase.nc;
 import com.ata.corebase.sf;
 import com.corebase.classes.LoginResult;
+import com.corebase.element.CustomValidationEditText;
 
 public class AC_Login extends CoreActivity {
 
 	private boolean isLoading = false;
+	private CustomValidationEditText et_Email;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
+
+		hideLogo(this);
+		getActionBar().setTitle("ورود");
+
+		et_Email = (CustomValidationEditText) findViewById(R.id.acLogin_et_Email);
 
 		Button btn = findButton(R.id.acLogin_btn_login);
 		btn.setOnClickListener(new OnClickListener() {
@@ -46,12 +54,27 @@ public class AC_Login extends CoreActivity {
 
 	protected void requestLogin() {
 
+		// check if user entered valid values
+		if (!et_Email.testValidity()) {
+			Toast.makeText(getContext(), "لطفا ایمیل خود را وارد نمایید",
+					Toast.LENGTH_SHORT).show();
+			return;
+		}
+
+		// check if user entered valid values
+		if (findEditText(R.id.acLogin_et_Password).getText().length() == 0) {
+			Toast.makeText(getContext(), "لطفا رمز عبور خود را وارد نمایید",
+					Toast.LENGTH_SHORT).show();
+			return;
+		}
+
 		// check if we are not loading
 		if (this.isLoading) {
 			// we are loading now
-			setLoading(true);
 			return;
 		}
+
+		setLoading(true);
 		this.isLoading = true;
 
 		// when user request login, we have to request the web

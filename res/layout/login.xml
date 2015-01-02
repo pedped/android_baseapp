@@ -1,8 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:whatever="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#d7072e"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -16,10 +18,35 @@
         android:orientation="vertical" >
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/login" />
+
+            <com.corebase.element.CustomTextView
+                android:id="@+id/customTextView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="ورود به سامانه"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#fff" />
+
+            <com.corebase.element.CustomTextView
+                android:id="@+id/customTextView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_horizontal"
+                android:text="در صورتی که قبلا در سایت ثیت نام نموده اید، مشخصات ورود خود را وارد نمایید، در غیر این صورت ابتدا در سامانه ثبت نام نمایید"
+                android:textColor="#fff" />
         </LinearLayout>
 
         <LinearLayout
@@ -28,34 +55,45 @@
             android:layout_weight="0"
             android:orientation="vertical" >
 
-            <com.corebase.element.CustomEditText
+            <com.corebase.element.CustomValidationEditText
+                whatever:testType="email"
                 android:id="@+id/acLogin_et_Email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="right"
                 android:ems="10"
+                android:gravity="right"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
-                android:text="convertersoft@gmail.com" >
+                android:text="convertersoft@gmail.com"
+                android:textColor="#fff"
+                android:textColorHint="#eee" >
 
                 <requestFocus />
-            </com.corebase.element.CustomEditText>
+            </com.corebase.element.CustomValidationEditText>
 
             <com.corebase.element.CustomEditText
                 android:id="@+id/acLogin_et_Password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:gravity="right"
                 android:hint="@string/password"
                 android:inputType="textPassword"
-                android:text="1598753pedped" />
+                android:text="1598753pedped"
+                android:textColor="#fff"
+                android:textColorHint="#eee" />
 
             <com.corebase.element.CustomButton
                 android:id="@+id/acLogin_btn_login"
+                style="@style/btndefault"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
                 android:layout_marginTop="12dp"
                 android:layout_weight="1"
-                android:text="@string/login" />
+                android:text="@string/login"
+                android:textSize="21sp" />
         </LinearLayout>
     </LinearLayout>
 

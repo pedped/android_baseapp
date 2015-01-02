@@ -3,12 +3,23 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.amlakgostar.fragment.fr_AmlakDarkhasti" >
 
     <com.corebase.unlimited.UnlimitedListView
         android:id="@+id/frAmlakShoma_lv_Master"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
     </com.corebase.unlimited.UnlimitedListView>
+
+    <com.corebase.element.CustomButton
+        android:id="@+id/frAmlakShoma_btn_AddMelk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_weight="0"
+        android:text="اضافه کردن ملک" />
 
 </LinearLayout>

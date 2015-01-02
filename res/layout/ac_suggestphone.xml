@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="right"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.ata.activity.AC_SuggestMelkPhoneListner" >
+
+    <com.corebase.element.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="پیشنهاد مشتری"
+        android:textSize="21sp" />
+
+    <com.corebase.element.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="در زیر لیست کاملی از مشتریانی که هم اکنون به دنبال ملکی با مشخصات ملک شما هستند، برای ارسال اطلاعات ملک به مشتریان بر روی کلید ارسال کلیک نمایید" />
+
+    <com.corebase.unlimited.UnlimitedListView
+        android:id="@+id/acSuggestPhone_ul_Master"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1" >
+    </com.corebase.unlimited.UnlimitedListView>
+
+    <com.corebase.element.CustomButton
+        android:id="@+id/acSuggestPhone_btn_Send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="ارسال" />
+
+</LinearLayout>

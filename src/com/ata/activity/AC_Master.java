@@ -4,15 +4,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import org.apache.http.NameValuePair;
 import org.json.JSONObject;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -33,6 +30,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.amlakgostar.classes.AmlakGostarRequestManager;
+import com.amlakgostar.classes.PublicRequest;
 import com.amlakgostar.fragment.fr_AmlakDarkhasti;
 import com.amlakgostar.fragment.fr_AmlakShoma;
 import com.amlakgostar.fragment.fr_Search;
@@ -42,6 +41,7 @@ import com.ata.corebase.CoreActivity;
 import com.ata.corebase.interfaces.OnResponseListener;
 import com.ata.corebase.nc;
 import com.ata.corebase.sf;
+import com.ata.events.InternetConnection;
 import com.ataalla.amlakgostar.R;
 import com.corebase.element.CustomTextView;
 import com.corebase.interfaces.Logout;
@@ -60,8 +60,8 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.ac_master);
 
-		// check for new version
-		// InternetConnection.checkForNewVersion(this);
+		// check for new verison
+		InternetConnection.checkForNewVersion(getContext());
 
 		// load default values
 		PreferenceManager.setDefaultValues(this, R.xml.internal, false);
@@ -78,14 +78,8 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 			return;
 		}
 
-		// check for new notification
-		// InternetConnection.checkForNotification(this);
-
-		// user is logged in or application do not require login
-		// startActivityWithName(AC_Register.class);
-
-		// user is logged in , check for user credits
-		checkUserCredits();
+		// check for new notification and verison
+		InternetConnection.checkForNotification(getContext());
 
 		// set action bar logo
 		getActionBar().setLogo(R.drawable.home_icon);
@@ -132,6 +126,9 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 
 		// hide notification
 		sf.cancelNotification(getContext(), config.NOTIFICATION_NEWREQUEST_ID);
+
+		// set alarm manager
+		AmlakGostarRequestManager.SetAlarmManager(getContext());
 	}
 
 	private void setLayoutsClickListner() {
@@ -180,7 +177,7 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 
 							@Override
 							public void onClick(DialogInterface arg0, int arg1) {
-								sf.OpenUrl(getContext(), "www.amlakgostar.ir");
+								PublicRequest.Request_SMSPlan(getContext());
 							}
 						}).create().show();
 	}
@@ -216,7 +213,8 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 
 							@Override
 							public void onClick(DialogInterface arg0, int arg1) {
-								sf.OpenUrl(getContext(), "www.amlakgostar.ir");
+								PublicRequest
+										.Request_SubscribePlan(getContext());
 							}
 						}).create().show();
 
@@ -419,7 +417,9 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 
 		// check user credit
 		if (sf.hasConnection(getContext())) {
+
 			checkUserCredits();
+
 		}
 
 	}

@@ -76,6 +76,7 @@
 
             <com.corebase.element.CustomButton
                 android:id="@+id/acViewMelkRequest_btn_ViewPhoneNumber"
+                style="@style/btndefault"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -100,6 +101,7 @@
 
                 <com.corebase.element.CustomButton
                     android:id="@+id/acViewMelkRequest_btn_Send"
+                    style="@style/btnprimary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
@@ -121,19 +123,19 @@
                     android:layout_weight="0"
                     android:gravity="center"
                     android:padding="8dp"
-                    android:textColor="#999"
                     android:text="در حال حاضر ملکی متناسب با نیاز این شخص موجود ندارید، لطفا املاک خود را اضافه نمایید"
+                    android:textColor="#999"
                     android:textSize="16sp" />
 
                 <com.corebase.element.CustomButton
                     android:id="@+id/acViewMelkRequest_btn_AddMelk"
+                    style="@style/btndefault"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
                     android:layout_weight="0"
                     android:text="اضافه کردن ملک"
                     android:textSize="12sp" />
-
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

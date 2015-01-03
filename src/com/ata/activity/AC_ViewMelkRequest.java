@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.amlakgostar.classes.PublicRequest;
 import com.ata.corebase.CoreActivity;
 import com.ata.corebase.sf;
 import com.ataalla.amlakgostar.R;
@@ -74,6 +75,18 @@ public class AC_ViewMelkRequest extends CoreActivity {
 			@Override
 			public void onClick(View arg0) {
 				startActivityWithName(AC_AddMelk.class);
+			}
+		});
+
+		// click listner on view melk phone
+		btn_ViewPhoneNumber.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+
+				// show end info
+				showEndInfo();
+
 			}
 		});
 
@@ -151,11 +164,17 @@ public class AC_ViewMelkRequest extends CoreActivity {
 										}).create().show();
 					} else {
 
-						// user has Internet connection
-						Intent intent = new Intent(getContext(),
-								AC_SendMelkInfo.class);
-						intent.putExtra("info", melkInfo);
-						startActivity(intent);
+						// check if user has SMS credit
+						if (Integer.valueOf(getSettingValue("remainday")) <= 0) {
+							// user need to increase subscribe plans
+							showEndInfo();
+						} else {
+							// user have remain plans
+							Intent intent = new Intent(getContext(),
+									AC_SendMelkInfo.class);
+							intent.putExtra("info", melkInfo);
+							startActivity(intent);
+						}
 
 					}
 				}
@@ -167,6 +186,25 @@ public class AC_ViewMelkRequest extends CoreActivity {
 			finish();
 		}
 
+	}
+
+	protected void showEndInfo() {
+		// user do not have any connection
+		new AlertDialog.Builder(getContext())
+				.setTitle("پایان اعتبار")
+				.setMessage(
+						"مدت زمان اعتبار شما در سامانه املاک گستر به پایان رسیده است. برای خرید عضویت بر روی کلید زیر کلیک نمایید")
+				.setPositiveButton("خرید اعتبار",
+						new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface arg0, int arg1) {
+
+								// we have to request public request
+								PublicRequest
+										.Request_SubscribePlan(getContext());
+
+							}
+						}).create().show();
 	}
 
 	@Override

@@ -147,17 +147,31 @@ public class AmlakGostarRequestManager {
 
 	public static void SetAlarmManager(Context context) {
 
+		// check if the last time we have checked for alarm manager in not
+		// lower than now
+		long lastChecked = Long.valueOf(sf.SettingManager_ReadString(context,
+				"lastalarm"));
+		long now = sf.getUnixTime();
+
+		if (lastChecked != 0
+				&& ((now - lastChecked) * 1000) < config.ALARMMANAGER_INTERVAL) {
+			// we do not need to set alarm manager
+			return;
+		}
+
 		AlarmManager alarmMgr;
 		PendingIntent alarmIntent;
 
 		alarmMgr = (AlarmManager) context
 				.getSystemService(Context.ALARM_SERVICE);
+
 		Intent intent = new Intent(context, AlarmReceiver.class);
+
 		alarmIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
 
-		alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME,
-				AlarmManager.INTERVAL_HALF_HOUR,
-				AlarmManager.INTERVAL_HALF_HOUR, alarmIntent);
+		alarmMgr.setInexactRepeating(AlarmManager.RTC_WAKEUP,
+				System.currentTimeMillis(), config.ALARMMANAGER_INTERVAL,
+				alarmIntent);
 
 		// show debug info
 		Log.d("Amlak Gostar", "Alarm Mananger Seted");

@@ -108,6 +108,18 @@ public class fr_AmlakDarkhasti extends Fragment {
 		ul.setOnLoadListner(new OnUnlimitedListLoadListner() {
 
 			@Override
+			public void Anytime() {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void OnError() {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
 			public void onMoreLoad(List<ItemObject> items) {
 				// TODO Auto-generated method stub
 
@@ -134,7 +146,7 @@ public class fr_AmlakDarkhasti extends Fragment {
 							// we have to set new notification seen
 							sf.SettingManager_WriteString(getActivity(),
 									"lastrequestseen", id);
-							
+
 						}
 					} catch (JSONException e) {
 						// TODO Auto-generated catch block

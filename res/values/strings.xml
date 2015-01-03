@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Coreapp</string>
+    <string name="app_name">املاک گستر</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">تنظیمات</string>
     <string name="title_activity_ac__login">AC_Login</string>
@@ -44,5 +44,7 @@
     <string name="title_activity_ac__view_map">مشاهده موقعیت در نقشه</string>
     <string name="title_activity_ac__suggest_melk_phone_listner">پیشنهاد مشتری</string>
     <string name="title_activity_ac__intro">املاک گستر</string>
+    <string name="title_activity_ac__smscredit_plans">بسته های پیامکی</string>
+    <string name="title_activity_ac__bongah_plans">پلان بنگاه</string>
 
 </resources>

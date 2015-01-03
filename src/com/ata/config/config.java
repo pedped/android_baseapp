@@ -14,11 +14,12 @@ public class config {
 	public static String DATABASE_AMLAK = "amlak";
 	public static String uploadURL = "http://amlak.edspace.org/api/file/upload";
 	public static String uploadImageURL = "http://amlak.edspace.org/api/file/uploadimage";
-	
+
 	public static final int NOTIFICAION_UPDATE_ID = 999;
 	public static final int NOTIFICATION_COLOR = 888888;
 	public static final int NOTIFICATION_DRAWABLE = R.drawable.ic_launcher;
 	public static final int NOTIFICATION_NEWREQUEST = R.drawable.ic_launcher;
 	public static final int NOTIFICATION_NEWREQUEST_ID = 1001;
+	public static final Integer ALARMMANAGER_INTERVAL = 30000;
 
 }

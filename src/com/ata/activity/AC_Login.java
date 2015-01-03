@@ -8,6 +8,7 @@ import org.apache.http.message.BasicNameValuePair;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -53,6 +54,26 @@ public class AC_Login extends CoreActivity {
 	}
 
 	protected void requestLogin() {
+
+		// check for Internet connection
+		if (!sf.hasConnection(getContext())) {
+
+			// user do not have Internet connection
+			new AlertDialog.Builder(AC_Login.this)
+					.setTitle(R.string.ops)
+					.setMessage(
+							"برای ورود نیاز به اینترنت دارید. ابتدا به اینترنت متصل شوید")
+					.setPositiveButton(R.string.ok,
+							new DialogInterface.OnClickListener() {
+
+								@Override
+								public void onClick(DialogInterface arg0,
+										int arg1) {
+
+								}
+							}).create().show();
+			return;
+		}
 
 		// check if user entered valid values
 		if (!et_Email.testValidity()) {
@@ -128,7 +149,13 @@ public class AC_Login extends CoreActivity {
 								loginResult.Store(AC_Login.this);
 
 								// start home page,
-								startActivityWithName(AC_Master.class);
+								// go to the home page
+								Intent intent = new Intent(getContext(),
+										AC_Master.class);
+								intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+										| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+								startActivity(intent);
+
 								finish();
 							}
 						} catch (Exception e) {

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@drawable/listview_backround"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="21dp"
+    android:paddingLeft="14dp"
+    android:paddingRight="14dp"
+    android:paddingTop="14dp" >
+
+    <com.corebase.element.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tag="title"
+        android:text="هیدر"
+        android:textColor="#555"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <com.corebase.element.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="روز"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#810e62"
+            android:textSize="28sp" />
+
+        <com.corebase.element.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="day"
+            android:text="تعداد پیامک"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#810e62"
+            android:textSize="28sp" />
+    </LinearLayout>
+
+    <com.corebase.element.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tag="price"
+        android:text="قیمت"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#b00883"
+        android:textSize="21sp" />
+
+    <com.corebase.element.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:tag="description"
+        android:text="توضیحات"
+        android:textColor="#555"
+        android:textSize="18sp" />
+
+</LinearLayout>

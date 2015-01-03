@@ -29,5 +29,8 @@
     <EditTextPreference
         android:defaultValue="0"
         android:key="lastrequestseen" />
+    <EditTextPreference
+        android:defaultValue="0"
+        android:key="lastalarm" />
 
 </PreferenceScreen>

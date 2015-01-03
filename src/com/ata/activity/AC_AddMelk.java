@@ -18,6 +18,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -48,7 +51,7 @@ import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.google.android.gms.maps.GoogleMap;
 
-public class AC_AddMelk extends CoreActivity {
+public class AC_AddMelk extends CoreActivity implements LocationListener {
 
 	public static class CityState {
 		public String StateID;
@@ -65,6 +68,12 @@ public class AC_AddMelk extends CoreActivity {
 			StateName = stateName;
 		}
 
+	}
+
+	private void loadLocationReciver() {
+		LocationManager lm = (LocationManager) getSystemService(LOCATION_SERVICE);
+		lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 3000, 0.1f,
+				this);
 	}
 
 	private static final int TAKE_PICTURE = 0;
@@ -123,6 +132,9 @@ public class AC_AddMelk extends CoreActivity {
 
 		// Load Map Fragment
 		// loadMap();
+
+		// load location receiver
+		loadLocationReciver();
 
 	}
 
@@ -608,6 +620,9 @@ public class AC_AddMelk extends CoreActivity {
 
 	private ProgressDialog ProgressDialog;
 
+	private double latitude = 0;
+	private double longitude = 0;
+
 	public void pickImage() {
 		// create intent with ACTION_IMAGE_CAPTURE action
 		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -631,6 +646,14 @@ public class AC_AddMelk extends CoreActivity {
 				&& intent != null) {
 
 			// resize image first
+			if (!lastImageFile.exists()) {
+				Toast.makeText(
+						getContext(),
+						"خطا در هنگام دریافت تصویر، لطفا حافظه و دوربین گوشی را چک نمایید",
+						Toast.LENGTH_LONG).show();
+				return;
+			}
+
 			sf.ResizeImage(getContext(), lastImageFile.getPath(), 80, 800, 600);
 
 			TextSliderView tSlider = new TextSliderView(this);
@@ -901,6 +924,8 @@ public class AC_AddMelk extends CoreActivity {
 				.toString()));
 		params.add(new BasicNameValuePair("type", sp_type.getSelectedItem()
 				.toString()));
+		params.add(new BasicNameValuePair("latitude", latitude + ""));
+		params.add(new BasicNameValuePair("longitude", longitude + ""));
 
 		// dynamic parameters
 		params.add(new BasicNameValuePair("bedroom", et_Bedroom.getText()
@@ -1230,5 +1255,31 @@ public class AC_AddMelk extends CoreActivity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onLocationChanged(Location arg0) {
+
+		this.latitude = arg0.getLatitude();
+		this.longitude = arg0.getLongitude();
+
+	}
+
+	@Override
+	public void onProviderDisabled(String arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onProviderEnabled(String arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
+		// TODO Auto-generated method stub
+
 	}
 }

@@ -14,6 +14,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <uses-sdk
         android:minSdkVersion="11"
@@ -49,43 +50,51 @@
         <!-- Activities -->
         <activity
             android:name="com.ata.coreapp.ListActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_LoginGoogle"
             android:label="@string/title_activity_ac__login"
+            android:logo="@drawable/home_icon"
             android:windowSoftInputMode="adjustResize|stateHidden" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_Login"
-            android:label="@string/title_activity_ac__login" >
+            android:label="@string/title_activity_ac__login"
+            android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_Register"
-            android:label="@string/title_activity_ac__register" >
+            android:label="@string/title_activity_ac__register"
+            android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_ContactUs"
-            android:label="@string/title_activity_ac__contact_us" >
+            android:label="@string/title_activity_ac__contact_us"
+            android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_ViewNotification"
-            android:label="@string/title_activity_ac__view_notification" >
+            android:label="@string/title_activity_ac__view_notification"
+            android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_Home"
-            android:label="@string/title_activity_ac__home" >
+            android:label="@string/title_activity_ac__home"
+            android:logo="@drawable/home_icon" >
         </activity>
 
         <!-- Boot Complete Receiver -->
-        <receiver
-            android:name="com.ata.broadcastreceiver.BootReceiver"
-            android:enabled="true"
-            android:exported="true" >
-            <intent-filter android:priority="500" >
+        <receiver android:name="com.ata.broadcastreceiver.BootReceiver" >
+            <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
             </intent-filter>
         </receiver>
+        <receiver
+            android:name="com.amlakgostar.classes.AlarmReceiver"
+            android:enabled="true" />
 
         <!-- Internet State Change -->
         <receiver android:name="com.ata.broadcastreceiver.NetworkStateChanged" >
@@ -96,7 +105,8 @@
 
         <activity
             android:name="com.ata.activity.AC_Master"
-            android:label="@string/title_activity_ac__master" >
+            android:label="@string/title_activity_ac__master"
+            android:logo="@drawable/home_icon" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -105,42 +115,60 @@
         </activity>
         <activity
             android:name="com.ata.activity.AC_ViewMelkRequest"
-            android:label="@string/title_activity_ac__view_melk_request" >
+            android:label="@string/title_activity_ac__view_melk_request"
+            android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_AddMelk"
-            android:label="@string/title_activity_ac__add_melk" >
+            android:label="@string/title_activity_ac__add_melk"
+            android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_SendMelkInfo"
-            android:label="@string/title_activity_ac__send_melk_info" >
+            android:label="@string/title_activity_ac__send_melk_info"
+            android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_SearchResult"
-            android:label="@string/title_activity_ac__search_result" >
+            android:label="@string/title_activity_ac__search_result"
+            android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_ViewMelk"
-            android:label="@string/title_activity_ac__view_melk" >
+            android:label="@string/title_activity_ac__view_melk"
+            android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_ViewMap"
             android:label="@string/title_activity_ac__view_map"
+            android:logo="@drawable/home_icon"
             android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_SuggestMelkPhoneListner"
-            android:label="@string/title_activity_ac__suggest_melk_phone_listner" >
+            android:label="@string/title_activity_ac__suggest_melk_phone_listner"
+            android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_Intro"
-            android:label="@string/title_activity_ac__intro" >
+            android:label="@string/title_activity_ac__intro"
+            android:logo="@drawable/home_icon" >
+        </activity>
+        <activity
+            android:name="com.ata.activity.AC_SMSCreditPlans"
+            android:label="@string/title_activity_ac__smscredit_plans"
+            android:logo="@drawable/home_icon" >
+        </activity>
+        <activity
+            android:name=".AC_BongahPlans"
+            android:label="@string/title_activity_ac__bongah_plans"
+            android:logo="@drawable/home_icon" >
         </activity>
     </application>
 
     <!--
      To retrieve OAuth 2.0 tokens or invalidate tokens to disconnect a user. This disconnect
-     option is required to comply with the Google+ Sign-In developer policies
+     option is required to comply with the Google+ Sign-In developer policies
     -->
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
 

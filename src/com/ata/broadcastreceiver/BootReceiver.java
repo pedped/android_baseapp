@@ -2,6 +2,7 @@ package com.ata.broadcastreceiver;
 
 import com.amlakgostar.classes.AmlakGostarRequestManager;
 import com.ata.config.config;
+import com.ata.corebase.sf;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -14,7 +15,10 @@ public class BootReceiver extends BroadcastReceiver {
 	public void onReceive(Context context, Intent arg1) {
 		// when the app received booting
 		Log.d(config.appLogTitle, "Received New Boot");
-		
+
+		// make last alarm manager to zero
+		sf.SettingManager_WriteString(context, "lastalarm", "0");
+
 		// set alarm for notification manager
 		AmlakGostarRequestManager.SetAlarmManager(context);
 	}

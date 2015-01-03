@@ -386,7 +386,7 @@
 
                 <com.corebase.element.CustomButton
                     android:id="@+id/acAddMelk_btn_AddImage"
-                    style="?android:attr/buttonStyleSmall"
+                    style="@style/btndefault"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="افزدون تصویر" />
@@ -405,11 +405,13 @@
 
             <com.corebase.element.CustomButton
                 android:id="@+id/acAddMelk_btn_Add"
+                style="@style/btnprimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Button" />
+
         </LinearLayout>
     </ScrollView>
 

@@ -223,6 +223,18 @@ public class AC_SuggestMelkPhoneListner extends CoreActivity {
 			public void onFirstLoad(List<ItemObject> items) {
 
 			}
+
+			@Override
+			public void Anytime() {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void OnError() {
+				// TODO Auto-generated method stub
+
+			}
 		});
 
 		// refresh the list

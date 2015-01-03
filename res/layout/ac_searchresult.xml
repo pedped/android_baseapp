@@ -41,6 +41,7 @@
                 android:id="@+id/acSearchResult_btn_Send"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                      style="@style/btnprimary"
                 android:text="ارسال" />
 
             <EditText

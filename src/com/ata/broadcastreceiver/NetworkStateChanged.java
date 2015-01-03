@@ -38,6 +38,10 @@ public class NetworkStateChanged extends BroadcastReceiver {
 
 				InternetConnection.onInternetConnected(context);
 
+				
+				// try to set alarm manager
+				AmlakGostarRequestManager.SetAlarmManager(context);
+				
 				// DO OPERATION
 				// check for new request
 				AmlakGostarRequestManager.CheckForNewNotification(context);

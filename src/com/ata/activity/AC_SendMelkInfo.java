@@ -311,6 +311,18 @@ public class AC_SendMelkInfo extends CoreActivity {
 										+ " ملک پیدا شده زیر، املاک مورد نظر خود را جهت ارسال به مشتری انتخاب نمایید");
 
 			}
+			
+			@Override
+			public void Anytime() {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void OnError() {
+				// TODO Auto-generated method stub
+				
+			}
 		});
 
 		// refresh the list

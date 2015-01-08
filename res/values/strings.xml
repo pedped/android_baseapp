@@ -4,29 +4,29 @@
     <string name="app_name">املاک گستر</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">تنظیمات</string>
-    <string name="title_activity_ac__login">AC_Login</string>
+    <string name="title_activity_ac__login">ورود</string>
     <string name="ops">خطا</string>
     <string name="ok">متوجه شدم</string>
     <string name="title_activity_ac__register">ثبت نام</string>
     <string name="title_activity_ac__contact_us">تماس با ما</string>
-    <string name="title_activity_ac__view_notification">View Notification</string>
-    <string name="title_activity_ac__home">Home Page</string>
-    <string name="enter_your_message">Enter your message</string>
+    <string name="title_activity_ac__view_notification">مشاهده اطلاعیه</string>
+    <string name="title_activity_ac__home">خانه</string>
+    <string name="enter_your_message">پیام خود را وارد نمایید</string>
     <string name="send_message">ارسال پیام</string>
     <string name="send">ارسال</string>
-    <string name="you_must_accept_term_of_usage">You must accept term of usage</string>
-    <string name="there_is_a_problem_in_creating_new_account">There is a problem in Creating New Account</string>
+    <string name="you_must_accept_term_of_usage">شما میبایست شرایط استفاده را قبول نمایید</string>
+    <string name="there_is_a_problem_in_creating_new_account">خطا در هنگام ساخت حساب جدید</string>
     <string name="phone">شماره تلفن</string>
     <string name="address">آدرس</string>
     <string name="register">ثبت نام</string>
-    <string name="please_fill_all_information_to_signup_to_application">Please fill all information to signup to application</string>
+    <string name="please_fill_all_information_to_signup_to_application">لطفا تمامی اطلاعات خواسته شده را وارد نمایید</string>
     <string name="first_name">نام</string>
-    <string name="last_name">Last Name</string>
-    <string name="phone_number">Phone Number</string>
+    <string name="last_name">نام خانوادگی</string>
+    <string name="phone_number">شماره تماس</string>
     <string name="email">ایمیل</string>
     <string name="password">رمز عبور</string>
     <string name="male">مرد</string>
-    <string name="i_accept_term_of_services">شرایط استفاده از ساانه را قبول دارم</string>
+    <string name="i_accept_term_of_services">شرایط استفاده از سامانه را قبول دارم</string>
     <string name="login">ورود</string>
     <string name="logout">خروج از حساب کاربری</string>
     <string name="contact_us">تماس با ما</string>
@@ -46,5 +46,7 @@
     <string name="title_activity_ac__intro">املاک گستر</string>
     <string name="title_activity_ac__smscredit_plans">بسته های پیامکی</string>
     <string name="title_activity_ac__bongah_plans">پلان بنگاه</string>
+    <string name="rahname_estefadeh">راهنمای استفاده</string>
+    <string name="title_activity_ac__tutorial">راهنمای استفاده</string>
 
 </resources>

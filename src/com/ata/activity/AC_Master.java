@@ -45,6 +45,7 @@ import com.ata.events.InternetConnection;
 import com.ataalla.amlakgostar.R;
 import com.corebase.element.CustomTextView;
 import com.corebase.interfaces.Logout;
+import com.crittercism.app.Crittercism;
 
 public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 
@@ -59,6 +60,9 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.ac_master);
+
+		// init Crittercim
+		intitCritticim();
 
 		// check for new verison
 		InternetConnection.checkForNewVersion(getContext());
@@ -129,6 +133,37 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 
 		// set alarm manager
 		AmlakGostarRequestManager.SetAlarmManager(getContext());
+
+		// check if we have not tut value , load that
+		if (getSettingValue("tut").length() == 0) {
+			requestTutorial();
+		}
+	}
+
+	private void intitCritticim() {
+
+		Crittercism.initialize(getApplicationContext(),
+				"54a8fc9d51de5e9f042ec78a");
+
+		// if user logged in, add info to log
+		String userid = getSettingValue("userid");
+		if (userid.length() > 0) {
+			try {
+				// instantiate metadata json object
+				JSONObject metadata = new JSONObject();
+
+				// add arbitrary metadata
+				Crittercism.setUsername(getSettingValue("userid"));
+
+				// add more data
+				metadata.put("user_id", getSettingValue("userid"));
+
+				// send metadata to crittercism (asynchronously)
+				Crittercism.setMetadata(metadata);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	private void setLayoutsClickListner() {
@@ -229,6 +264,11 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 				getSettingValue("melkcount"));
 		findTextView(R.id.acMaster_txt_RemainingDays).setText(
 				getSettingValue("remainday"));
+
+		// check if user has internet connection
+		if (!sf.hasConnection(getContext())) {
+			return;
+		}
 
 		/*
 		 * Create a web request Check User Credit Dec 23, 2014
@@ -344,6 +384,8 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 			startActivityWithName(AC_ContactUs.class);
 		} else if (id == R.id.action_add) {
 			startActivityWithName(AC_AddMelk.class);
+		} else if (id == R.id.action_tutorial) {
+			startActivityWithName(AC_Tutorial.class);
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -416,11 +458,7 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 				getSettingValue("smscredit"));
 
 		// check user credit
-		if (sf.hasConnection(getContext())) {
-
-			checkUserCredits();
-
-		}
+		checkUserCredits();
 
 	}
 
@@ -463,6 +501,59 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 		// e.printStackTrace();
 		// }
 		return bitmap;
+	}
+
+	private void requestTutorial() {
+		/*
+		 * Create a web request requestTitle Jan 8, 2015
+		 */
+		List<NameValuePair> params = new ArrayList<NameValuePair>();
+
+		nc.WebRequest(getContext(), config.requestUrl + "bongah/androidtut",
+				params, new OnResponseListener() {
+
+					@Override
+					public void onUnSuccess(String message) {
+						new AlertDialog.Builder(getContext())
+								.setTitle(R.string.ops)
+								.setMessage(message)
+								.setPositiveButton(R.string.ok,
+										new DialogInterface.OnClickListener() {
+
+											@Override
+											public void onClick(
+													DialogInterface arg0,
+													int arg1) {
+
+											}
+										}).create().show();
+
+					}
+
+					@Override
+					public void onSuccess(String result) {
+						try {
+
+							// we have to store the received string
+							setSettingValue("tut", result);
+
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+
+					}
+
+					@Override
+					public void onError() {
+
+					}
+
+					@Override
+					public void Anytime() {
+
+					}
+				});
+
 	}
 
 	/**

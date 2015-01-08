@@ -14,10 +14,12 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.ata.activity.AC_AddMelk;
 import com.ata.activity.AC_ViewMelk;
 import com.ata.config.config;
+import com.ata.corebase.sf;
 import com.ataalla.amlakgostar.R;
 import com.corebase.interfaces.OnUnlimitedListClickListner;
 import com.corebase.unlimited.UnlimitedAdapter.UnlimitListAdapterItem;
@@ -29,6 +31,7 @@ import com.corebase.unlimited.UnlimitedListView;
 public class fr_AmlakShoma extends Fragment {
 
 	protected String TAG = "fr_AmlakShoma";
+	private LinearLayout ll_RequestAddMelk;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,6 +39,26 @@ public class fr_AmlakShoma extends Fragment {
 
 		View rootView = inflater.inflate(R.layout.fr_amlakshoma, container,
 				false);
+
+		// load addmelk layout
+		ll_RequestAddMelk = (LinearLayout) rootView
+				.findViewById(R.id.frAmlakShoma_ll_RequestAddMelk);
+		((Button) rootView.findViewById(R.id.frAmlakShoma_btn_AddMelkInternal))
+				.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View arg0) {
+						startActivity(new Intent(getActivity(),
+								AC_AddMelk.class));
+					}
+				});
+
+		// check if user has not melk, requets to add melk, show the add layout
+		String melkCount = sf.SettingManager_ReadString(getActivity(),
+				"melkcount");
+		if (!melkCount.equals("0")) {
+			ll_RequestAddMelk.setVisibility(View.GONE);
+		}
 
 		// load melks
 		loadMelks((UnlimitedListView) rootView

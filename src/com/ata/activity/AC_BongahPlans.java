@@ -1,4 +1,4 @@
-package com.ataalla.amlakgostar;
+package com.ata.activity;
 
 import java.util.List;
 
@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 
 import com.amlakgostar.classes.PublicRequest;
 import com.ata.corebase.CoreActivity;
+import com.ataalla.amlakgostar.R;
 import com.corebase.interfaces.OnUnlimitedListClickListner;
 import com.corebase.interfaces.OnUnlimitedListLoadListner;
 import com.corebase.unlimited.UnlimitedAdapter.UnlimitListAdapterItem;

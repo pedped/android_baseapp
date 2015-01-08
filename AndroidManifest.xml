@@ -15,6 +15,8 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <uses-sdk
         android:minSdkVersion="11"
@@ -160,15 +162,19 @@
             android:logo="@drawable/home_icon" >
         </activity>
         <activity
-            android:name=".AC_BongahPlans"
+            android:name="com.ata.activity.AC_BongahPlans"
             android:label="@string/title_activity_ac__bongah_plans"
             android:logo="@drawable/home_icon" >
+        </activity>
+        <activity
+            android:name="com.ata.activity.AC_Tutorial"
+            android:label="@string/title_activity_ac__tutorial" >
         </activity>
     </application>
 
     <!--
      To retrieve OAuth 2.0 tokens or invalidate tokens to disconnect a user. This disconnect
-     option is required to comply with the Google+ Sign-In developer policies
+     option is required to comply with the Google+ Sign-In developer policies
     -->
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
 

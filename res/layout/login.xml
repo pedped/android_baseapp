@@ -56,7 +56,6 @@
             android:orientation="vertical" >
 
             <com.corebase.element.CustomValidationEditText
-                whatever:testType="email"
                 android:id="@+id/acLogin_et_Email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -65,9 +64,9 @@
                 android:gravity="right"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
-                android:text="convertersoft@gmail.com"
                 android:textColor="#fff"
-                android:textColorHint="#eee" >
+                android:textColorHint="#eee"
+                whatever:testType="email" >
 
                 <requestFocus />
             </com.corebase.element.CustomValidationEditText>
@@ -80,7 +79,6 @@
                 android:gravity="right"
                 android:hint="@string/password"
                 android:inputType="textPassword"
-                android:text="1598753pedped"
                 android:textColor="#fff"
                 android:textColorHint="#eee" />
 

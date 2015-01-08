@@ -17,9 +17,9 @@ public class config {
 
 	public static final int NOTIFICAION_UPDATE_ID = 999;
 	public static final int NOTIFICATION_COLOR = 888888;
-	public static final int NOTIFICATION_DRAWABLE = R.drawable.ic_launcher;
-	public static final int NOTIFICATION_NEWREQUEST = R.drawable.ic_launcher;
+	public static final int NOTIFICATION_DRAWABLE = R.drawable.finish_flag;
+	public static final int NOTIFICATION_NEWREQUEST = R.drawable.manager;
 	public static final int NOTIFICATION_NEWREQUEST_ID = 1001;
-	public static final Integer ALARMMANAGER_INTERVAL = 30000;
+	public static final Integer ALARMMANAGER_INTERVAL = 1800000;
 
 }

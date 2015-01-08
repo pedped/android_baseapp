@@ -33,6 +33,7 @@ import com.ata.corebase.nc;
 import com.ata.corebase.sf;
 import com.ataalla.amlakgostar.R;
 import com.corebase.classes.LoginResult;
+import com.crittercism.app.Crittercism;
 
 public class AC_Register extends CoreActivity implements LocationListener {
 
@@ -81,6 +82,25 @@ public class AC_Register extends CoreActivity implements LocationListener {
 	}
 
 	protected void onRegisterButtonClicked() {
+
+		// check for interenet connection
+		if (!sf.hasConnection(getContext())) {
+			new AlertDialog.Builder(getContext())
+					.setTitle("عدم دسترسی به اینترنت")
+					.setMessage(
+							"برای ثبت نام در سامانه نیاز به ابنترنت دارید، اطفا اینترنت گوشی را فعال نمایید و سپس مجددا تلاش نمایید")
+					.setPositiveButton(R.string.ok,
+							new DialogInterface.OnClickListener() {
+
+								@Override
+								public void onClick(DialogInterface arg0,
+										int arg1) {
+
+								}
+
+							}).create().show();
+			return;
+		}
 
 		// check for regsiter flag
 		if (this.isLoading) {
@@ -186,6 +206,7 @@ public class AC_Register extends CoreActivity implements LocationListener {
 
 								// finish current page
 								finish();
+								return;
 							} else {
 								// there was a problem
 								Toast.makeText(
@@ -196,6 +217,7 @@ public class AC_Register extends CoreActivity implements LocationListener {
 							}
 						} catch (Exception e) {
 							e.printStackTrace();
+							Crittercism.logHandledException(e);
 						}
 
 						Toast.makeText(

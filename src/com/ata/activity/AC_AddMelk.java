@@ -46,6 +46,7 @@ import com.ata.corebase.nc;
 import com.ata.corebase.sf;
 import com.ataalla.amlakgostar.R;
 import com.corebase.interfaces.onUploadListner;
+import com.crittercism.app.Crittercism;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
@@ -106,6 +107,9 @@ public class AC_AddMelk extends CoreActivity implements LocationListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.ac_addmelk);
+
+		// leave log
+		Crittercism.leaveBreadcrumb("مشاهده صفحه افزودن ملک");
 
 		// add type and noe
 		hashTypes = new HashMap<String, String>();
@@ -761,6 +765,11 @@ public class AC_AddMelk extends CoreActivity implements LocationListener {
 
 	protected void onRequestSendMelkInfo() {
 
+		if (!isValid()) {
+			// user entered valid fields are not valid
+			return;
+		}
+
 		// check if we are not sending melk info now
 		if (this.sendingMelkInfo) {
 			// we are currently sending melk info
@@ -861,6 +870,153 @@ public class AC_AddMelk extends CoreActivity implements LocationListener {
 
 	}
 
+	private boolean isValid() {
+
+		String type = sp_type.getSelectedItem().toString();
+		String manzoor = sp_manzoor.getSelectedItem().toString();
+
+		String blvd = et_Blvd.getText().toString();
+		String description = et_Description.getText().toString();
+		String mobile = et_Mobile.getText().toString();
+		String phone = et_Phone.getText().toString();
+
+		String state = sp_State.getSelectedItem().toString();
+		String city = sp_City.getSelectedItem().toString();
+		String address = et_Address.getText().toString();
+
+		// dynamic parameters
+		String bedroom = et_Bedroom.getText().toString();
+		String bath = et_Bath.getText().toString();
+		String zirbana = et_Zirbana.getText().toString();
+		String rahn = et_Rahn.getText().toString();
+		String saleprice = et_SalePrice.getText().toString();
+		String ejare = et_Ejare.getText().toString();
+		String metraj = et_Metraj.getText().toString();
+
+		// check dynamic fields
+		if (type.equals("خانه") || type.equals("آپارتمان")
+				|| type.equals("دفتر کار") || type.equals("اتاق کار")
+				|| type.equals("ویلا")) {
+
+			// we have to search for bed
+			if (bedroom.length() == 0) {
+				showError("شما میبایست تعداد اتاق را وارد نمایید");
+				findEditText(R.id.acAddMelk_et_Bedroom).requestFocus();
+				return false;
+			}
+
+		}
+
+		if (type.equals("خانه") || type.equals("آپارتمان")
+				|| type.equals("دفتر کار") || type.equals("ویلا")) {
+
+			// we have to search for bed
+			if (bath.length() == 0) {
+				showError("شما میبایست تعداد حمام و دستشویی را وارد نمایید");
+				findEditText(R.id.acAddMelk_et_Bath).requestFocus();
+				return false;
+			}
+
+		}
+
+		if (type.equals("خانه") || type.equals("آپارتمان")
+				|| type.equals("دفتر کار") || type.equals("اتاق کار")
+				|| type.equals("ویلا")) {
+
+			// we have to search for bed
+			if (zirbana.length() == 0) {
+				showError("شما میبایست زیربنای ملک را وارد نمایید");
+				findEditText(R.id.acAddMelk_et_zirbana).requestFocus();
+				return false;
+			}
+
+		}
+
+		if (type.equals("خانه") || type.equals("ویلا")) {
+
+			// we have to search for bed
+			if (metraj.length() == 0) {
+				showError("شما میبایست متراژ را وارد نمایید");
+				findEditText(R.id.acAddMelk_et_MetrajZamin).requestFocus();
+				return false;
+			}
+
+		}
+
+		if (manzoor.equals("فروش")) {
+
+			// we have to search for bed
+			if (saleprice.length() == 0) {
+				showError("شما میبایست قیمت فروش را وارد نمایید");
+				findEditText(R.id.acAddMelk_et_SalePrice).requestFocus();
+				return false;
+			}
+
+		}
+
+		if (manzoor.equals("رهن و اجاره")) {
+
+			// we have to search for bed
+			if (rahn.length() == 0) {
+				showError("شما میبایست قیمت رهن را وارد نمایید"
+						+ "."
+						+ " در صورتی رهن رایگان است، مقدار صفر به اجاره اختصاص دهید");
+				findEditText(R.id.acAddMelk_et_Rahn).requestFocus();
+				return false;
+			}
+
+			if (ejare.length() == 0) {
+				showError("شما میبایست قیمت اجاره را وارد نمایید"
+						+ "."
+						+ " در صورتی اجاره رایگان است، مقدار صفر به اجاره اختصاص دهید");
+				findEditText(R.id.acAddMelk_et_Ejare).requestFocus();
+				return false;
+			}
+
+		}
+
+		if (mobile.length() == 0) {
+			showError("شما میبایست شماره موبایل صاحب ملک را وارد نمایید");
+			findEditText(R.id.acAddMelk_et_Mobile).requestFocus();
+			return false;
+		}
+
+		if (phone.length() == 0) {
+			showError("شما میبایست شماره تماس ثابت صاحب را وارد نمایید، در صورتی که ملک شماره ثابت ندارد، شماره تماس مشاور املاک خود را وارد نمایید");
+			findEditText(R.id.acAddMelk_et_Phone).requestFocus();
+			return false;
+		}
+
+		// check required fields
+		if (blvd.length() == 0) {
+			showError("شما میبایست بلوار اصلی را وارد نمایید");
+			findEditText(R.id.acAddMelk_et_Blvd).requestFocus();
+			return false;
+		}
+
+		if (address.length() == 0) {
+			showError("شما میبایست آدرس را وارد نمایید، آدرس ملک در قسمت های دیگر برنامه مورد استفاده قرار خواهد گرفت");
+			findEditText(R.id.acAddMelk_et_Address).requestFocus();
+			return false;
+		}
+		return true;
+	}
+
+	private void showError(String message) {
+		new AlertDialog.Builder(getContext())
+				.setTitle(R.string.ops)
+				.setMessage(message)
+				.setPositiveButton(R.string.ok,
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface arg0, int arg1) {
+
+							}
+						}).create().show();
+
+	}
+
 	protected void afterMelkAdded(final int melkID, int totalMelkPhoneListner) {
 
 		// check if we have moshati
@@ -953,6 +1109,11 @@ public class AC_AddMelk extends CoreActivity implements LocationListener {
 	}
 
 	private void storeOffline() {
+
+		if (!isValid()) {
+			// user entered valid fields are not valid
+			return;
+		}
 
 		// show success message
 		new AlertDialog.Builder(getContext())
@@ -1236,6 +1397,7 @@ public class AC_AddMelk extends CoreActivity implements LocationListener {
 
 		});
 
+		sp_type.setSelection(2);
 	}
 
 	@Override

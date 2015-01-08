@@ -38,10 +38,9 @@ public class NetworkStateChanged extends BroadcastReceiver {
 
 				InternetConnection.onInternetConnected(context);
 
-				
 				// try to set alarm manager
 				AmlakGostarRequestManager.SetAlarmManager(context);
-				
+
 				// DO OPERATION
 				// check for new request
 				AmlakGostarRequestManager.CheckForNewNotification(context);
@@ -105,6 +104,12 @@ public class NetworkStateChanged extends BroadcastReceiver {
 
 											}
 										}).create().show();
+
+						// we have to remove item from database
+						database.open();
+						database.Unsynced_Remove(unsyncedMelk.ID);
+						database.close();
+
 					}
 
 					@Override
@@ -128,14 +133,13 @@ public class NetworkStateChanged extends BroadcastReceiver {
 
 					@Override
 					public void onCompleted(String result) {
-						
-						
+
 						// we have to remove item from dataase
 						database.open();
 						database.Unsynced_Remove(unsyncedMelk.ID);
 						database.close();
-						
-						//show success message
+
+						// show success message
 						Toast.makeText(context,
 								"ملک با موفقیت به سرور ارسال گردید",
 								Toast.LENGTH_LONG).show();
@@ -144,6 +148,7 @@ public class NetworkStateChanged extends BroadcastReceiver {
 
 					@Override
 					public void Anytime() {
+
 					}
 				});
 

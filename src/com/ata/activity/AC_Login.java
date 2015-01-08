@@ -26,6 +26,7 @@ import com.ata.corebase.nc;
 import com.ata.corebase.sf;
 import com.corebase.classes.LoginResult;
 import com.corebase.element.CustomValidationEditText;
+import com.crittercism.app.Crittercism;
 
 public class AC_Login extends CoreActivity {
 
@@ -160,6 +161,7 @@ public class AC_Login extends CoreActivity {
 							}
 						} catch (Exception e) {
 							e.printStackTrace();
+							Crittercism.logHandledException(e);
 						}
 
 					}

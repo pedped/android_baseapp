@@ -2,8 +2,8 @@ package com.ata.config;
 
 public class appinfo {
 
-	public static String phoneNumber = "+989899988";
-	public static String address = "Iran, Shiraz, No 400";
-	public static String contactPhoneNumber = "+9891774545";
+	public static String phoneNumber = "07132306071";
+	public static String address = "شیراز، خیابان ملاصدرا، روبروی فروشگاه گلبافت، جنب موبایل LG ، طبقه دوم";
+	public static String contactPhoneNumber = "9399477290";
 	
 }

@@ -42,7 +42,6 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginTop="8dp"
-                    android:background="#ddd"
                     android:gravity="right" />
 
                 <com.corebase.element.CustomTextView
@@ -58,7 +57,6 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginTop="8dp"
-                    android:background="#ddd"
                     android:gravity="right" />
 
                 <LinearLayout
@@ -74,16 +72,21 @@
                         android:layout_height="wrap_content"
                         android:text="متراژ" />
 
+                    <com.corebase.element.CustomTextView
+                        android:id="@+id/customTextView1"
+                        style="@style/acAddMelk_Subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="مقدار متراژ را به متر مربع وارد نمایید" />
+
                     <com.corebase.element.CustomEditText
                         android:id="@+id/acAddMelk_et_MetrajZamin"
                         style="@style/acAddMelk_EditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="numberDecimal"
-                        android:text="150" >
+                        android:inputType="numberDecimal" >
 
                         <requestFocus />
-
                     </com.corebase.element.CustomEditText>
                 </LinearLayout>
 
@@ -101,14 +104,19 @@
                         android:layout_height="wrap_content"
                         android:text="زیربنا" />
 
+                    <com.corebase.element.CustomTextView
+                        android:id="@+id/CustomTextView05"
+                        style="@style/acAddMelk_Subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="مقدار متراژ را به متر مربع وارد نمایید" />
+
                     <com.corebase.element.CustomEditText
                         android:id="@+id/acAddMelk_et_zirbana"
                         style="@style/acAddMelk_EditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="numberDecimal"
-                        android:text="60" />
-
+                        android:inputType="numberDecimal" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -128,9 +136,7 @@
                         android:id="@+id/acAddMelk_et_Bedroom"
                         style="@style/acAddMelk_EditText"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="2" />
-
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -150,9 +156,7 @@
                         android:id="@+id/acAddMelk_et_Bath"
                         style="@style/acAddMelk_EditText"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="3" />
-
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
                 <com.corebase.element.CustomTextView
@@ -166,9 +170,7 @@
                     style="@style/acAddMelk_EditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textMultiLine"
-                    android:text="خیلی ملک خوبی هست" />
-
+                    android:inputType="textMultiLine" />
             </LinearLayout>
 
             <LinearLayout
@@ -184,6 +186,16 @@
                     android:layout_height="wrap_content"
                     android:text="قیمت"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <com.corebase.element.CustomTextView
+                    android:id="@+id/CustomTextView01"
+                    style="@style/acAddMelk_Subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="قیمت ملک را به میلیون تومان وارد نمایید، مانند &quot;250&quot; که بیانگر 250 میلیون تومان است"
+                    android:textColor="#555"
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:id="@+id/acAddMelk_ll_SalePrice"
@@ -203,9 +215,7 @@
                         style="@style/acAddMelk_EditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="numberDecimal"
-                        android:text="200" />
-
+                        android:inputType="numberDecimal" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -226,9 +236,7 @@
                         style="@style/acAddMelk_EditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="numberDecimal"
-                        android:text="50" />
-
+                        android:inputType="numberDecimal" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -249,9 +257,7 @@
                         style="@style/acAddMelk_EditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="numberDecimal"
-                        android:text=".1" />
-
+                        android:inputType="numberDecimal" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -270,18 +276,14 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <com.corebase.element.CustomTextView
-                    style="@style/acAddMelk_ItemHeader"
+                    android:id="@+id/CustomTextView02"
+                    style="@style/acAddMelk_Subtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="شماره تلفن ثابت صاحب ملک" />
-
-                <com.corebase.element.CustomEditText
-                    android:id="@+id/acAddMelk_et_Phone"
-                    style="@style/acAddMelk_EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    android:text="62656415" />
+                    android:layout_marginTop="8dp"
+                    android:text="شماره تماس صاحب ملک تنها برای شما قابل نمایش و استفاده خواهد بود"
+                    android:textColor="#555"
+                    android:textSize="16sp" />
 
                 <com.corebase.element.CustomTextView
                     style="@style/acAddMelk_ItemHeader"
@@ -294,9 +296,21 @@
                     style="@style/acAddMelk_EditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    android:text="09399477290" />
+                    android:ems="10"
+                    android:inputType="phone" />
 
+                <com.corebase.element.CustomTextView
+                    style="@style/acAddMelk_ItemHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="شماره تلفن ثابت صاحب ملک" />
+
+                <com.corebase.element.CustomEditText
+                    android:id="@+id/acAddMelk_et_Phone"
+                    style="@style/acAddMelk_EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone" />
             </LinearLayout>
 
             <LinearLayout
@@ -324,8 +338,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:background="#fff" />
+                    android:layout_marginRight="8dp" />
 
                 <com.corebase.element.CustomTextView
                     style="@style/acAddMelk_ItemHeader"
@@ -338,8 +351,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:background="#fff" />
+                    android:layout_marginRight="8dp" />
 
                 <com.corebase.element.CustomTextView
                     style="@style/acAddMelk_ItemHeader"
@@ -351,8 +363,7 @@
                     android:id="@+id/acAddMelk_et_Blvd"
                     style="@style/acAddMelk_EditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="فرهنگ شهر" />
+                    android:layout_height="wrap_content" />
 
                 <com.corebase.element.CustomTextView
                     style="@style/acAddMelk_ItemHeader"
@@ -365,8 +376,14 @@
                     style="@style/acAddMelk_EditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textMultiLine"
-                    android:text="سجادیه 4، کوچه 8" />
+                    android:inputType="textMultiLine" />
+
+                <com.corebase.element.CustomTextView
+                    android:id="@+id/CustomTextView03"
+                    style="@style/acAddMelk_Subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="آدرس دقیق ملک را وارد نمایید تا در صورت نیاز بتوانید از آدرس برای پیدا کردن ملک استفاده نمایید، آدرس وارد شده تنها برای بنگاه شما قابل نمایش و استفاده است" />
 
             </LinearLayout>
 
@@ -389,7 +406,9 @@
                     style="@style/btndefault"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="افزدون تصویر" />
+                    android:layout_margin="8dp"
+                    android:text="افزدون تصویر"
+                    android:textSize="16sp" />
 
                 <com.daimajia.slider.library.SliderLayout
                     android:id="@+id/acAddmelk_slider_Master"
@@ -410,8 +429,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:layout_marginTop="8dp"
-                android:text="Button" />
-
+                android:text="ارسال" />
         </LinearLayout>
     </ScrollView>
 

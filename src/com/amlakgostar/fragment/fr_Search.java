@@ -171,7 +171,8 @@ public class fr_Search extends Fragment {
 					long arg3) {
 				String type = list.get(pos);
 				if (type.equals("خانه") || type.equals("آپارتمان")
-						|| type.equals("دفتر کار") || type.equals("اتاق کار")) {
+						|| type.equals("دفتر کار") || type.equals("اتاق کار")
+						|| type.equals("ویلا")) {
 
 					// we have to search for bed
 					ll_Bedroom.setVisibility(View.VISIBLE);
@@ -187,7 +188,7 @@ public class fr_Search extends Fragment {
 			}
 
 		});
-
+		sp_type.setSelection(2);
 	}
 
 	private void loadOtagheKhabEnd() {

@@ -78,7 +78,7 @@
 
     <style name="acAddMelk_ItemHeader">
         <item name="android:layout_marginRight">8dp</item>
-        <item name="android:layout_marginTop">14dp</item>
+        <item name="android:layout_marginTop">16dp</item>
         <item name="android:textColor">#aaa</item>
     </style>
 
@@ -142,4 +142,9 @@
         <item name="android:paddingRight">16dp</item>
     </style>
 
+    <style name="acAddMelk_Subtitle">
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:textColor">#aaa</item>
+        <item name="android:textSize">11sp</item>
+    </style>
 </resources>

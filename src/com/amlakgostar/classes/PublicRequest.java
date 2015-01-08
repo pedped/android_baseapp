@@ -13,12 +13,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 
+import com.ata.activity.AC_BongahPlans;
 import com.ata.activity.AC_SMSCreditPlans;
 import com.ata.config.config;
 import com.ata.corebase.nc;
 import com.ata.corebase.sf;
 import com.ata.corebase.interfaces.OnResponseListener;
-import com.ataalla.amlakgostar.AC_BongahPlans;
 import com.ataalla.amlakgostar.R;
 
 public class PublicRequest {

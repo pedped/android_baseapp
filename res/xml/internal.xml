@@ -32,5 +32,8 @@
     <EditTextPreference
         android:defaultValue="0"
         android:key="lastalarm" />
+    <EditTextPreference
+        android:defaultValue=""
+        android:key="tut" />
 
 </PreferenceScreen>

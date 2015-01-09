@@ -255,10 +255,16 @@ public class fr_Search extends Fragment {
 		boolean searchforbed = false;
 		if ((type.equals("خانه") || type.equals("آپارتمان")
 				|| type.equals("دفتر کار") || type.equals("اتاق کار"))
-				&& bedEnd != 0) {
+				&& (bedEnd != 0 || bedStart != 0)) {
 
 			// we have to search for bed
 			searchforbed = true;
+
+			if (bedEnd < bedStart) {
+				int a = bedStart;
+				bedStart = bedEnd;
+				bedEnd = a;
+			}
 		}
 
 		// Sale Price

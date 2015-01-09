@@ -11,6 +11,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -23,6 +25,7 @@ import com.ata.corebase.sf;
 import com.ata.events.InternetConnection;
 import com.ataalla.amlakgostar.R;
 import com.corebase.interfaces.onUploadListner;
+import com.crittercism.app.Crittercism;
 
 public class NetworkStateChanged extends BroadcastReceiver {
 
@@ -30,6 +33,7 @@ public class NetworkStateChanged extends BroadcastReceiver {
 	public void onReceive(Context context, Intent arg1) {
 		// when the app received booting
 		Log.d(config.appLogTitle, "Internet State Changed");
+
 		try {
 			// check if we are connected or not
 			if (sf.hasConnection(context)) {
@@ -66,6 +70,7 @@ public class NetworkStateChanged extends BroadcastReceiver {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+			Crittercism.logHandledException(e);
 		}
 
 	}
@@ -152,5 +157,16 @@ public class NetworkStateChanged extends BroadcastReceiver {
 					}
 				});
 
+	}
+
+	private boolean hasInternet(Context context) {
+
+		ConnectivityManager connectivityManager = (ConnectivityManager) context
+				.getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo activeNetInfo = connectivityManager
+				.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+		boolean isConnected = activeNetInfo != null
+				&& activeNetInfo.isConnectedOrConnecting();
+		return isConnected;
 	}
 }

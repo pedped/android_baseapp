@@ -10,8 +10,10 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
@@ -21,6 +23,7 @@ import com.amlakgostar.classes.PublicRequest;
 import com.ata.corebase.CoreActivity;
 import com.ata.corebase.sf;
 import com.ataalla.amlakgostar.R;
+import com.crittercism.app.Crittercism;
 
 public class AC_ViewMelkRequest extends CoreActivity {
 
@@ -69,6 +72,10 @@ public class AC_ViewMelkRequest extends CoreActivity {
 		ll_NoMelk = (LinearLayout) findViewById(R.id.acViewMelkRequest_ll_NoMelk);
 		rb_Rate = (RatingBar) findViewById(R.id.acViewMelkRequest_rb_Rate);
 
+		// disable rate bat indicator
+		rb_Rate.setIsIndicator(true);
+		rb_Rate.setClickable(true);
+
 		// Click Listener For Add Melk
 		btn_AddMelk.setOnClickListener(new OnClickListener() {
 
@@ -92,17 +99,42 @@ public class AC_ViewMelkRequest extends CoreActivity {
 
 		// parse melk info
 		try {
-			JSONObject json = new JSONObject(melkInfo);
+			final JSONObject json = new JSONObject(melkInfo);
 
-			txt_Area.setText("مناطق درخواستی:" + json.getString("area"));
-			txt_City.setText("شهر:" + json.getString("city"));
-			txt_Bedroom.setText("اتاق:" + json.getString("bedroom"));
-			txt_Price.setText("محدوده قیمت:" + json.getString("pricerange"));
-			txt_Date.setText("تاریخ:" + json.getString("date"));
+			txt_Area.setText("مناطق درخواستی: " + json.getString("area"));
+			txt_City.setText("شهر: " + json.getString("city"));
+			txt_Bedroom.setText("اتاق: " + json.getString("bedroom"));
+			txt_Price.setText("محدوده قیمت: " + json.getString("pricerange"));
+			txt_Date.setText("تاریخ: " + json.getString("date"));
 			txt_Header.setText(json.getString("header"));
 
+			final String rateInfo = json.getString("rateinfo");
 			// set rate
 			rb_Rate.setRating(json.getLong("rate"));
+			findLinearLayout(R.id.acViewMelkRequest_ll_RateHolder)
+					.setOnClickListener(new OnClickListener() {
+
+						@Override
+						public void onClick(View arg0) {
+							new AlertDialog.Builder(getContext())
+									.setTitle("امتیاز املاک گستر به این مشتری")
+									.setMessage(
+											Html.fromHtml("<ul>"
+													+ rateInfo.replace("</li>",
+															".<br/><br/>").trim() + "</ul>"))
+									.setPositiveButton(
+											R.string.ok,
+											new DialogInterface.OnClickListener() {
+
+												@Override
+												public void onClick(
+														DialogInterface arg0,
+														int arg1) {
+
+												}
+											}).create().show();
+						}
+					});
 
 			// check if user have remain days, show phone number
 			if (Integer.valueOf(getSettingValue("remainday")) > 0) {
@@ -181,8 +213,8 @@ public class AC_ViewMelkRequest extends CoreActivity {
 			});
 
 		} catch (JSONException e) {
-
 			e.printStackTrace();
+			Crittercism.logHandledException(e);
 			finish();
 		}
 

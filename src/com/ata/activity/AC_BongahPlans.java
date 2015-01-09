@@ -7,6 +7,7 @@ import org.json.JSONObject;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnCancelListener;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ import android.widget.AdapterView;
 
 import com.amlakgostar.classes.PublicRequest;
 import com.ata.corebase.CoreActivity;
+import com.ata.corebase.sf;
 import com.ataalla.amlakgostar.R;
 import com.corebase.interfaces.OnUnlimitedListClickListner;
 import com.corebase.interfaces.OnUnlimitedListLoadListner;
@@ -30,8 +32,35 @@ public class AC_BongahPlans extends CoreActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.ac_bongahplans);
 
-		// load list
-		loadListView();
+		// check if user has no Internet Connection, show the Error
+		if (!sf.hasConnection(getContext())) {
+			new AlertDialog.Builder(getContext())
+					.setTitle("عدم دسترسی به اینترنت")
+					.setMessage(
+							"برای مشاهده پلان های عضویت نیاز به اینترنت دارید، لطفا ابتدا به اینترنت متصل شوید")
+					.setPositiveButton(R.string.ok,
+							new DialogInterface.OnClickListener() {
+
+								@Override
+								public void onClick(DialogInterface arg0,
+										int arg1) {
+									finish();
+
+								}
+							}).setOnCancelListener(new OnCancelListener() {
+
+						@Override
+						public void onCancel(DialogInterface arg0) {
+							finish();
+						}
+					}).create().show();
+		} else {
+
+			setLoading(true);
+
+			// load list
+			loadListView();
+		}
 	}
 
 	private void loadListView() {
@@ -107,7 +136,7 @@ public class AC_BongahPlans extends CoreActivity {
 			@Override
 			public void Anytime() {
 				// hide loading
-				// setLoading(false);
+				setLoading(false);
 			}
 
 			@Override

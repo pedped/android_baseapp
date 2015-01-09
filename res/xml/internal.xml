@@ -35,5 +35,11 @@
     <EditTextPreference
         android:defaultValue=""
         android:key="tut" />
+    <EditTextPreference
+        android:defaultValue=""
+        android:key="bongahname" />
+    <EditTextPreference
+        android:defaultValue=""
+        android:key="mobile" />
 
 </PreferenceScreen>

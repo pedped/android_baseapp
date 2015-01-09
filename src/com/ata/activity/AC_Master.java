@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -45,6 +46,7 @@ import com.ata.events.InternetConnection;
 import com.ataalla.amlakgostar.R;
 import com.corebase.element.CustomTextView;
 import com.corebase.interfaces.Logout;
+import com.corebase.unlimited.UnlimitedDatabase;
 import com.crittercism.app.Crittercism;
 
 public class AC_Master extends CoreActivity implements ActionBar.TabListener {
@@ -125,7 +127,7 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 					.setTabListener(this).setCustomView(ctv));
 		}
 
-		// set LinearLayout Click Listners
+		// set LinearLayout Click Listeners
 		setLayoutsClickListner();
 
 		// hide notification
@@ -138,6 +140,18 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 		if (getSettingValue("tut").length() == 0) {
 			requestTutorial();
 		}
+
+		// set tab
+		mViewPager.setCurrentItem(2);
+		getActionBar().setSelectedNavigationItem(2);
+
+		// Set local
+		Locale locale = new Locale("fa");
+		Locale.setDefault(locale);
+		Configuration config = new Configuration();
+		config.locale = locale;
+		getBaseContext().getResources().updateConfiguration(config,
+				getBaseContext().getResources().getDisplayMetrics());
 	}
 
 	private void intitCritticim() {
@@ -223,14 +237,14 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 				.setMessage(
 						"تعداد املاک اضافه شده ار طرف شما در سامانه "
 								+ getSettingValue("melkcount")
-								+ " عدد میباشد، برای افزودن ملک از کلید سمتت راست در بالای برنامه استفاده نمایید")
+								+ " عدد میباشد، برای افزودن ملک از کلید سمت راست در بالای برنامه استفاده نمایید")
 				.setNegativeButton("برگشت", null)
-				.setPositiveButton("افزایش اعتبار پیامک",
+				.setPositiveButton("افزدون ملک",
 						new DialogInterface.OnClickListener() {
 
 							@Override
 							public void onClick(DialogInterface arg0, int arg1) {
-								sf.OpenUrl(getContext(), "www.amlakgostar.ir");
+								startActivityWithName(AC_AddMelk.class);
 							}
 						}).create().show();
 
@@ -304,11 +318,15 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 							String remainingDays = json.getString("remaindays");
 							String SMSCredit = json.getString("smscredit");
 							String Melks = json.getString("melks");
+							String bongahname = json.getString("bongahname");
+							String mobile = json.getString("mobile");
 
 							// save in database
 							setSettingValue("smscredit", SMSCredit);
 							setSettingValue("melkcount", Melks);
 							setSettingValue("remainday", remainingDays);
+							setSettingValue("bongahname", bongahname);
+							setSettingValue("mobile", mobile);
 
 							// set view values
 							findTextView(R.id.acMaster_txt_SMSCredit).setText(
@@ -373,6 +391,25 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 				@Override
 				public void onLogout() {
 
+					try {
+						// we have to delete all items in user melks and elk
+						// request
+						UnlimitedDatabase db = new UnlimitedDatabase(
+								getContext(), config.DATABASE_AMLAK);
+						db.open();
+						db.DeleteAllItem();
+						db.close();
+
+						db = new UnlimitedDatabase(getContext(),
+								config.DATABASE_AMLAKDARKHASTI);
+						db.open();
+						db.DeleteAllItem();
+						db.close();
+					} catch (Exception e) {
+						e.printStackTrace();
+						Crittercism.logHandledException(e);
+					}
+
 					// user logged it out, we have to show home page
 					startActivityWithName(AC_Home.class);
 
@@ -417,11 +454,11 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 		@Override
 		public Fragment getItem(int position) {
 			switch (position) {
-			case 0:
+			case 2:
 				return fr_AmlakDarkhasti;
 			case 1:
 				return fr_AmlakShoma;
-			case 2:
+			case 0:
 				return fr_Search;
 			}
 			return null;
@@ -437,11 +474,11 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 		public CharSequence getPageTitle(int position) {
 			Locale l = Locale.getDefault();
 			switch (position) {
-			case 0:
+			case 2:
 				return "مشتریان";
 			case 1:
 				return "املاک شما";
-			case 2:
+			case 0:
 				return "جستجو";
 			}
 			return null;

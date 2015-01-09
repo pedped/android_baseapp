@@ -2,13 +2,13 @@
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
 
@@ -80,6 +80,7 @@
         <item name="android:layout_marginRight">8dp</item>
         <item name="android:layout_marginTop">16dp</item>
         <item name="android:textColor">#aaa</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
     <style name="acAddMelk_EditText">
@@ -128,7 +129,7 @@
     <style name="btnprimary">
         <item name="android:background">@drawable/primarybutton</item>
         <item name="android:textColor">#fff</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:paddingLeft">16dp</item>
         <item name="android:paddingRight">16dp</item>
     </style>
@@ -145,6 +146,12 @@
     <style name="acAddMelk_Subtitle">
         <item name="android:layout_marginRight">8dp</item>
         <item name="android:textColor">#aaa</item>
-        <item name="android:textSize">11sp</item>
+        <item name="android:textSize">14sp</item>
     </style>
+
+    <style name="acViewMelkRequest_ItemInfo">
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
 </resources>

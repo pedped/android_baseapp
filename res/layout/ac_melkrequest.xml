@@ -32,34 +32,40 @@
                 android:layout_weight="0"
                 android:gravity="center"
                 android:text="آپارتمان"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="24sp" />
 
             <com.corebase.element.CustomTextView
                 android:id="@+id/acViewMelkRequest_txt_Bedroom"
+                style="@style/acViewMelkRequest_ItemInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="خواب" />
 
             <com.corebase.element.CustomTextView
                 android:id="@+id/acViewMelkRequest_txt_Price"
+                style="@style/acViewMelkRequest_ItemInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="قیمت" />
 
             <com.corebase.element.CustomTextView
                 android:id="@+id/acViewMelkRequest_txt_Date"
+                style="@style/acViewMelkRequest_ItemInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="تاریخ" />
 
             <com.corebase.element.CustomTextView
                 android:id="@+id/acViewMelkRequest_txt_City"
+                style="@style/acViewMelkRequest_ItemInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="شهر" />
 
             <com.corebase.element.CustomTextView
                 android:id="@+id/acViewMelkRequest_txt_Area"
+                style="@style/acViewMelkRequest_ItemInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="محدوده" />
@@ -97,7 +103,7 @@
                     android:gravity="center"
                     android:padding="8dp"
                     android:text="شما سه ملک متنساب با نیاز این مشتری در بنگاه خود دارید"
-                    android:textSize="16sp" />
+                    android:textSize="18sp" />
 
                 <com.corebase.element.CustomButton
                     android:id="@+id/acViewMelkRequest_btn_Send"
@@ -141,6 +147,7 @@
     </ScrollView>
 
     <LinearLayout
+        android:id="@+id/acViewMelkRequest_ll_RateHolder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -149,7 +156,7 @@
         android:orientation="vertical"
         android:padding="16dp" >
 
-        <TextView
+        <com.corebase.element.CustomTextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

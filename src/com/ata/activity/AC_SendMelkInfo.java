@@ -124,6 +124,7 @@ public class AC_SendMelkInfo extends CoreActivity {
 		// set flag
 		sendingMelks = true;
 		progessDialog = new ProgressDialog(getContext());
+		progessDialog.setCancelable(false);
 		progessDialog.setMessage("در حال ارسال اطلاعات املاک");
 		progessDialog.show();
 
@@ -311,17 +312,17 @@ public class AC_SendMelkInfo extends CoreActivity {
 										+ " ملک پیدا شده زیر، املاک مورد نظر خود را جهت ارسال به مشتری انتخاب نمایید");
 
 			}
-			
+
 			@Override
 			public void Anytime() {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void OnError() {
 				// TODO Auto-generated method stub
-				
+
 			}
 		});
 

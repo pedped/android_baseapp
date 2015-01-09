@@ -25,6 +25,7 @@ import com.ata.corebase.interfaces.OnResponseListener;
 import com.ata.corebase.nc;
 import com.ata.corebase.sf;
 import com.ataalla.amlakgostar.R;
+import com.crittercism.app.Crittercism;
 
 public class AmlakGostarRequestManager {
 
@@ -76,6 +77,7 @@ public class AmlakGostarRequestManager {
 
 						} catch (Exception e) {
 							e.printStackTrace();
+							Crittercism.logHandledException(e);
 						}
 
 					}

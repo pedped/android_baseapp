@@ -3,6 +3,7 @@ package com.ata.activity;
 import java.util.List;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -28,6 +29,7 @@ import com.corebase.unlimited.UnlimitedDatabase;
 import com.corebase.unlimited.UnlimitedDatabase.UnlimitedDatabaseItem;
 import com.corebase.unlimited.UnlimitedList;
 import com.corebase.unlimited.UnlimitedList.ItemObject;
+import com.crittercism.app.Crittercism;
 
 public class AC_SearchResult extends CoreActivity {
 
@@ -138,6 +140,7 @@ public class AC_SearchResult extends CoreActivity {
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+					Crittercism.logHandledException(e);
 				}
 			}
 		});
@@ -168,8 +171,82 @@ public class AC_SearchResult extends CoreActivity {
 		sf.sendMesageIntent(this, et_Phone.getText().toString(), message);
 	}
 
-	private String getSMS(List<String> checkedItems) {
-		return checkedItems.get(0);
+	private String getSMS(List<String> checkedItems) throws JSONException {
+
+		StringBuilder melkString = new StringBuilder();
+		melkString
+				.append("مشتری گرامی، املاک زیر مطابق با نیاز شما در مشاور املاک "
+						+ getSettingValue("bongahname") + " موجود می باشد");
+
+		melkString.append("\r\n\r\n");
+
+		// get each melk info
+		for (String string : checkedItems) {
+			melkString.append(getMelkInfo(string) + "\r\n\r\n");
+		}
+
+		melkString.append("جهت کسب اطلاعات بیشتر، با شماره "
+				+ getSettingValue("mobile") + " تماس حاصل فرمایید.");
+
+		return melkString.toString();
+	}
+
+	private String getMelkInfo(String string) throws JSONException {
+
+		String result = "";
+		JSONObject json = new JSONObject(string);
+
+		String type = json.getString("type");
+
+		// add header
+		result += type;
+
+		// check for bedroom
+		if (type.equals("خانه") || type.equals("آپارتمان")
+				|| type.equals("دفتر کار") || type.equals("اتاق کار")
+				|| type.equals("ویلا")) {
+
+			// we have to search for bed
+			result += " " + json.getString("bedroom") + " خوابه" + "،";
+		}
+
+		// add purpose
+		result += " ";
+		result += "واقع در  " + json.getString("area");
+
+		// add metraj
+		if (type.equals("خانه") || type.equals("ویلا")) {
+
+			// we have to search for bed
+			result += " به متراژ" + json.getString("metraj") + " متر مربع"
+					+ " ";
+		}
+
+		// add zirbana
+		if (type.equals("خانه") || type.equals("آپارتمان")
+				|| type.equals("دفتر کار") || type.equals("اتاق کار")
+				|| type.equals("ویلا")) {
+
+			// we have to search for bed
+			result += " و زیربنای " + json.getString("zirbana") + " متر مربع"
+					+ " ";
+		}
+
+		// check if property is for sale
+		result += "جهت " + json.getString("purpose");
+		if (json.getString("purpose").equals("فروش")) {
+			result += " به قیمت " + json.getString("salepricehuman");
+		} else if (json.getString("purpose").equals("رهن و اجاره")) {
+			result += "،رهن " + json.getString("rahnhuman");
+			result += "،اجاره " + json.getString("ejarehuman");
+		} else {
+			result += " به قیمت " + json.getString("salepricehuman");
+			result += " و یا ";
+			result += " رهن " + json.getString("rahnhuman");
+			result += " و اجاره " + json.getString("ejarehuman");
+		}
+
+		return result;
 	}
 
 	@Override

@@ -41,7 +41,7 @@
                         android:layout_height="wrap_content" >
 
                         <com.corebase.element.CustomTextView
-                            android:id="@+id/customTextView2"
+                            android:id="@+id/acTutorial_Info"
                             style="@style/acRegister_GroupHeader"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

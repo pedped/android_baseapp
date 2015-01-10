@@ -666,7 +666,7 @@ public class AC_AddMelk extends CoreActivity implements LocationListener {
 			imageList.add(lastImageFile.getPath());
 
 			Toast.makeText(getApplicationContext(),
-					"تصویر با موفقیت ارسال گردید", Toast.LENGTH_SHORT).show();
+					"تصویر با موفقیت اضافه گردید", Toast.LENGTH_SHORT).show();
 
 			if (imageList.size() > 0) {
 				mSlider.setVisibility(View.VISIBLE);

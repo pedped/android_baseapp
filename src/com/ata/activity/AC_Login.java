@@ -32,7 +32,7 @@ public class AC_Login extends CoreActivity {
 
 	private boolean isLoading = false;
 	private CustomValidationEditText et_Email;
-
+ 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

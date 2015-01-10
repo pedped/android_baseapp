@@ -41,5 +41,8 @@
     <EditTextPreference
         android:defaultValue=""
         android:key="mobile" />
+    <EditTextPreference
+        android:defaultValue="0"
+        android:key="visitedtutorial" />
 
 </PreferenceScreen>

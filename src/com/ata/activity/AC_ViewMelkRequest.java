@@ -101,12 +101,19 @@ public class AC_ViewMelkRequest extends CoreActivity {
 		try {
 			final JSONObject json = new JSONObject(melkInfo);
 
-			txt_Area.setText("مناطق درخواستی: " + json.getString("area"));
-			txt_City.setText("شهر: " + json.getString("city"));
-			txt_Bedroom.setText("اتاق: " + json.getString("bedroom"));
-			txt_Price.setText("محدوده قیمت: " + json.getString("pricerange"));
-			txt_Date.setText("تاریخ: " + json.getString("date"));
-			txt_Header.setText(json.getString("header"));
+			txt_Area.setText(Html.fromHtml("مناطق درخواستی: "
+					+ json.getString("area")));
+			txt_City.setText(Html.fromHtml("شهر: " + json.getString("city")));
+			txt_Bedroom.setText(Html.fromHtml("اتاق: "
+					+ json.getString("bedroom")));
+			txt_Price.setText(Html.fromHtml("محدوده قیمت: "
+					+ json.getString("pricerange")));
+			txt_Date.setText(Html.fromHtml("تاریخ: " + json.getString("date")));
+			txt_Header.setText(Html.fromHtml(json.getString("header")));
+
+			if (json.getString("area").trim().length() == 0) {
+				txt_Area.setVisibility(View.GONE);
+			}
 
 			final String rateInfo = json.getString("rateinfo");
 			// set rate
@@ -121,7 +128,8 @@ public class AC_ViewMelkRequest extends CoreActivity {
 									.setMessage(
 											Html.fromHtml("<ul>"
 													+ rateInfo.replace("</li>",
-															".<br/><br/>").trim() + "</ul>"))
+															".<br/><br/>")
+															.trim() + "</ul>"))
 									.setPositiveButton(
 											R.string.ok,
 											new DialogInterface.OnClickListener() {

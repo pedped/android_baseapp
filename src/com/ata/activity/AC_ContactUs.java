@@ -26,7 +26,7 @@ public class AC_ContactUs extends CoreActivity {
 	private Button btn_sendmessage;
 	private GoogleMap map;
 	private TextView txt_Address;
-	private TextView txt_Phone;
+	private TextView txt_Phone; 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

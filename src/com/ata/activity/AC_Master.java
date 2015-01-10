@@ -13,6 +13,7 @@ import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
@@ -22,6 +23,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -84,11 +86,11 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 			return;
 		}
 
-		// check for new notification and verison
-		InternetConnection.checkForNotification(getContext());
-
 		// set action bar logo
 		getActionBar().setLogo(R.drawable.home_icon);
+
+		// check for new notification and verison
+		InternetConnection.checkForNotification(getContext());
 
 		// create fragment
 		fr_AmlakDarkhasti = new fr_AmlakDarkhasti();
@@ -121,7 +123,11 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 			CustomTextView ctv = new CustomTextView(getContext());
 			ctv.setText(mSectionsPagerAdapter.getPageTitle(i));
 			ctv.setTextColor(Color.WHITE);
-			ctv.setPadding(3, 12, 3, 12);
+			ctv.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
+			ctv.setPadding((int) sf.ConvertDPtoPX(getContext(), 3),
+					(int) sf.ConvertDPtoPX(getContext(), 12),
+					(int) sf.ConvertDPtoPX(getContext(), 3),
+					(int) sf.ConvertDPtoPX(getContext(), 12));
 			actionBar.addTab(actionBar.newTab()
 					.setText(mSectionsPagerAdapter.getPageTitle(i))
 					.setTabListener(this).setCustomView(ctv));
@@ -146,12 +152,13 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 		getActionBar().setSelectedNavigationItem(2);
 
 		// Set local
-		Locale locale = new Locale("fa");
-		Locale.setDefault(locale);
-		Configuration config = new Configuration();
-		config.locale = locale;
-		getBaseContext().getResources().updateConfiguration(config,
-				getBaseContext().getResources().getDisplayMetrics());
+		sf.SetLocal(getBaseContext(), "fa");
+
+		// Check if user need to visit tutorial
+		if (getSettingValue("visitedtutorial").equals("0")) {
+			startActivityWithName(AC_Tutorial.class);
+			return;
+		}
 	}
 
 	private void intitCritticim() {
@@ -423,6 +430,8 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 			startActivityWithName(AC_AddMelk.class);
 		} else if (id == R.id.action_tutorial) {
 			startActivityWithName(AC_Tutorial.class);
+		} else if (id == R.id.action_help) {
+			startActivityWithName(AC_Help.class);
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -496,6 +505,9 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 
 		// check user credit
 		checkUserCredits();
+
+		// Set Local
+		sf.SetLocal(getBaseContext(), "fa");
 
 	}
 

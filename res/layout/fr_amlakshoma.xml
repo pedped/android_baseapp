@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="4dp"
     tools:context="com.amlakgostar.fragment.fr_AmlakDarkhasti" >
 
     <LinearLayout
@@ -16,7 +17,7 @@
         android:padding="16dp" >
 
         <ImageView
-            android:id="@+id/imageView1"
+            android:id="@+id/acTutorial_Image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/addmelkrequesticon" />
@@ -27,14 +28,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="املاک خود را اضافه نمایید"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="24sp" />
 
         <com.corebase.element.CustomTextView
             android:id="@+id/customTextView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="شما تاکنون ملکی تاکنون به سامانه اضافه نکرده اید، با اضافه کردن املاک خود، بازدهی مشاور املاک خود را چند برابر نمایید" />
+            android:text="شما تاکنون ملکی  به سامانه اضافه نکرده اید، با اضافه کردن املاک خود، بازدهی مشاور املاک خود را چند برابر نمایید"
+            android:textSize="16sp" />
 
         <com.corebase.element.CustomButton
             android:id="@+id/frAmlakShoma_btn_AddMelkInternal"

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <com.corebase.element.CustomTextView
+                android:id="@+id/customTextView1"
+                style="@style/acTutorial_Header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="جستجو در املاک" />
+
+            <ImageView
+                android:id="@+id/acTutorial_Image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/step_search" />
+
+            <com.corebase.element.CustomTextView
+                android:id="@+id/acTutorial_Info"
+                style="@style/acTutorial_Info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="دیگر نیازی به حضور همیشگی در مشاور املاک نیست. با استفاده از برنامه املاک گستر قادر خواهید بود در هر زمان که بخواهید، در املاک خود جستجو نمایید و نتایج جستجو را برای مشتری خود ارسال نمایید." />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

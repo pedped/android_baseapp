@@ -5,6 +5,7 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -109,6 +110,20 @@ public class AC_SearchResult extends CoreActivity {
 					View arg1, int arg2, long arg3) {
 
 				Log.d(TAG, JsonItem);
+				
+				
+				// try to open activity
+				try {
+					JSONObject item;
+					item = new JSONObject(JsonItem);
+					String id = (String) item.get("id");
+					Intent intent = new Intent(getContext(), AC_ViewMelk.class);
+					intent.putExtra("melkid", id);
+					startActivity(intent);
+				} catch (JSONException e) {
+					e.printStackTrace();
+					Crittercism.logHandledException(e);
+				}
 
 			}
 		});

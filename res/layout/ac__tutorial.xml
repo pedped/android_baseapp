@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ata.activity.AC_Tutorial" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="0"
+        android:orientation="vertical"
+        android:padding="8dp" >
+
+        <com.corebase.element.CustomButton
+            android:id="@+id/acTutorial_btn_Start"
+            style="@style/btndefault"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="شروع" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <com.corebase.element.CustomButton
+                android:id="@+id/acTutorial_btn_Preview"
+                style="@style/btndefault"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:text="قبلی" />
+
+            <com.corebase.element.CustomButton
+                android:id="@+id/acTutorial_btn_Next"
+                style="@style/btndefault"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:text="بعدی" />
+
+        </LinearLayout>
+
+        <com.corebase.element.CustomButton
+            android:id="@+id/acTutorial_btn_StartAPP"
+            style="@style/btnprimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
+            android:text="شروع برنامه" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -33,7 +33,7 @@
                 android:gravity="center"
                 android:text="آپارتمان"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="24sp" />
+                android:textSize="32sp" />
 
             <com.corebase.element.CustomTextView
                 android:id="@+id/acViewMelkRequest_txt_Bedroom"
@@ -78,7 +78,8 @@
                 android:gravity="center"
                 android:text="شماره تماس"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#0b9d5a" />
+                android:textColor="#0b9d5a"
+                android:textSize="28sp" />
 
             <com.corebase.element.CustomButton
                 android:id="@+id/acViewMelkRequest_btn_ViewPhoneNumber"

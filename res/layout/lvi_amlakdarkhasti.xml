@@ -41,7 +41,7 @@
                     android:tag="header"
                     android:text="نوع"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textSize="24sp" />
+                    android:textSize="26sp" />
 
             </LinearLayout>
 
@@ -57,7 +57,7 @@
                     android:layout_weight="1"
                     android:tag="pricerange"
                     android:text="قیمت"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <com.corebase.element.CustomTextView
@@ -67,7 +67,7 @@
                 android:tag="date"
                 android:text="تاریخ"
                 android:textColor="#555"
-                android:textSize="12sp" />
+                android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>
 

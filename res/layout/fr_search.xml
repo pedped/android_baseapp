@@ -54,7 +54,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -96,7 +95,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1" />
-
                         </LinearLayout>
 
                         <com.corebase.element.CustomTextView
@@ -199,6 +197,18 @@
                         android:layout_weight=".5"
                         android:text="حداکثر اجاره" />
                 </LinearLayout>
+
+                <com.corebase.element.CustomTextView
+                    android:id="@+id/CustomTextView01"
+                    style="@style/acAddMelk_Subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="16dp"
+                    android:text="قیمت ملک را به میلیون تومان وارد نمایید، مانند &quot;250&quot; که بیانگر 250 میلیون تومان است"
+                    android:textColor="#aaa"
+                    android:textSize="14sp" />
+
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

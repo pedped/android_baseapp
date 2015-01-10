@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <com.corebase.element.CustomTextView
+                android:id="@+id/customTextView1"
+                style="@style/acTutorial_Header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="قابلیت افزدون آفلاین ملک" />
+
+            <ImageView
+                android:id="@+id/acTutorial_Image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/step_offline" />
+
+            <com.corebase.element.CustomTextView
+                android:id="@+id/acTutorial_Info"
+                style="@style/acTutorial_Info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="با استفاده از قابلیت افزدون ملک برنامه، شما قادر خواهید بود تا اطلاعات ملک را به برنامه اضافه نمایید، همچنین در صورتی که در لحظه اضافه کردن ملک به اینترنت دسترسی نداشته باشید، اطلاعات ملک به صورت آفلاین ذخیره شده و در هنگام اتصال به اینترنت به صورت خودکار به سامانه ارسال می گردد" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

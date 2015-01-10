@@ -30,6 +30,16 @@
                     android:text="مشخصات کلی ملک" />
 
                 <com.corebase.element.CustomTextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="16dp"
+                    android:text="تمامی فیلد های خواسته شده را وارد نمایید"
+                    android:textSize="18sp" />
+
+                <com.corebase.element.CustomTextView
                     style="@style/acAddMelk_ItemHeader"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

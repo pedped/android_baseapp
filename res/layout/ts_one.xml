@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <com.corebase.element.CustomTextView
+                android:id="@+id/customTextView1"
+                style="@style/acTutorial_Header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="دریافت روازنه مشتری"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/acTutorial_Image"
+                style="@style/acTutorial_ImageStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/step_moshtrari" />
+
+            <com.corebase.element.CustomTextView
+                android:id="@+id/acTutorial_Info"
+                style="@style/acTutorial_Info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="با استفاده از سامانه املاک گستر، شما روزانه تعداد زیادی مشتری جدید دریافت خواهید نمود. سامانه با استفاده از الگوریتم های خود به هر مشتری امتیاز خواهد داد و شما قادر خواهید بود تعداد املاک خود برای مشتری را مشاهده نمایید" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

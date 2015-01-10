@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <com.corebase.element.CustomTextView
+                android:id="@+id/customTextView1"
+                style="@style/acTutorial_Header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="مشاهده اطلاعات املاک" />
+
+            <ImageView
+                android:id="@+id/acTutorial_Image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/step_website" />
+
+            <com.corebase.element.CustomTextView
+                android:id="@+id/acTutorial_Info"
+                style="@style/acTutorial_Info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="روزانه تعداد زیادی مشتری با استفاده از وبسایت www.amlakgostar.ir به دنبال ملک مورد نظر خود میگردند. املاکی که شما از طریق برنامه اضافه می نمایید تا در دسترس مشتریان قرار گیرد، به طور خودکار به وبسایت ارسال می گردید، همچنین اطلاعات مشاور املاک شما به عنوان بنگاه قابل مراجعه در سایت نمایش داده خواهد شد"
+                android:textSize="19sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -75,108 +75,97 @@
                 android:padding="12dp" >
 
                 <LinearLayout
+                    android:id="@+id/acViewMelk_ll_Bedroom"
+                    style="@style/property_inofholder"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal" >
+                    android:layout_weight="1" >
 
-                    <LinearLayout
-                        android:id="@+id/acViewMelk_ll_Baths"
-                        style="@style/property_inofholder"
+                    <com.corebase.element.CustomTextView
+                        android:id="@+id/acViewMelk_txt_PropertyBeds"
+                        style="@style/property_info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" >
+                        android:layout_weight="1"
+                        android:paddingLeft="8dp"
+                        android:text="Info" />
 
-                        <com.corebase.element.CustomTextView
-                            android:id="@+id/acViewMelk_txt_PropertyBaths"
-                            style="@style/property_info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Info" />
-
-                        <com.corebase.element.CustomTextView
-                            android:id="@+id/CustomTextView08"
-                            style="@style/property_title"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:text="حمام و دستشویی" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/acViewMelk_ll_Bedroom"
-                        style="@style/property_inofholder"
-                        android:layout_width="match_parent"
+                    <com.corebase.element.CustomTextView
+                        android:id="@+id/CustomTextView09"
+                        style="@style/property_title"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" >
-
-                        <com.corebase.element.CustomTextView
-                            android:id="@+id/acViewMelk_txt_PropertyBeds"
-                            style="@style/property_info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:paddingLeft="8dp"
-                            android:text="Info" />
-
-                        <com.corebase.element.CustomTextView
-                            android:id="@+id/CustomTextView09"
-                            style="@style/property_title"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:text="اتاق خواب" />
-                    </LinearLayout>
+                        android:layout_weight="0"
+                        android:text="اتاق خواب: " />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/acViewMelk_ll_Baths"
+                    style="@style/property_inofholder"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" >
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
 
-                    <LinearLayout
-                        android:id="@+id/acViewMelk_ll_Zirbana"
-                        style="@style/property_inofholder"
+                    <com.corebase.element.CustomTextView
+                        android:id="@+id/acViewMelk_txt_PropertyBaths"
+                        style="@style/property_info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" >
+                        android:layout_weight="1"
+                        android:text="Info" />
 
-                        <com.corebase.element.CustomTextView
-                            android:id="@+id/acViewMelk_txt_PropertyZirbana"
-                            style="@style/property_info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Info" />
+                    <com.corebase.element.CustomTextView
+                        android:id="@+id/CustomTextView08"
+                        style="@style/property_title"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="حمام و دستشویی:" />
+                </LinearLayout>
 
-                        <com.corebase.element.CustomTextView
-                            android:id="@+id/CustomTextView07"
-                            style="@style/property_title"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:text="زیربنا" />
-                    </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/acViewMelk_ll_PropertyMetraj"
+                    style="@style/property_inofholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
 
-                    <LinearLayout
-                        android:id="@+id/acViewMelk_ll_PropertyMetraj"
-                        style="@style/property_inofholder"
+                    <com.corebase.element.CustomTextView
+                        android:id="@+id/acViewMelk_txt_PropertyMetraj"
+                        style="@style/property_info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" >
+                        android:layout_weight="1"
+                        android:paddingLeft="8dp"
+                        android:text="Info" />
 
-                        <com.corebase.element.CustomTextView
-                            android:id="@+id/acViewMelk_txt_PropertyMetraj"
-                            style="@style/property_info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:paddingLeft="8dp"
-                            android:text="Info" />
+                    <com.corebase.element.CustomTextView
+                        android:id="@+id/CustomTextView06"
+                        style="@style/property_title"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="متراژ: " />
+                </LinearLayout>
 
-                        <com.corebase.element.CustomTextView
-                            android:id="@+id/CustomTextView06"
-                            style="@style/property_title"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:text="متراژ" />
-                    </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/acViewMelk_ll_Zirbana"
+                    style="@style/property_inofholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <com.corebase.element.CustomTextView
+                        android:id="@+id/acViewMelk_txt_PropertyZirbana"
+                        style="@style/property_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Info" />
+
+                    <com.corebase.element.CustomTextView
+                        android:id="@+id/CustomTextView07"
+                        style="@style/property_title"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="زیربنا: " />
                 </LinearLayout>
 
                 <LinearLayout
@@ -198,59 +187,53 @@
                         style="@style/property_title"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
-                        android:text="قیمت فروش" />
+                        android:text="قیمت فروش: " />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/acViewMelk_ll_RahnPrice"
+                    style="@style/property_inofholder"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" >
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
 
-                    <LinearLayout
-                        android:id="@+id/acViewMelk_ll_RahnPrice"
-                        style="@style/property_inofholder"
+                    <com.corebase.element.CustomTextView
+                        android:id="@+id/acViewMelk_txt_PropertyRahnPrice"
+                        style="@style/property_info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" >
+                        android:layout_weight="1"
+                        android:paddingLeft="8dp"
+                        android:text="Info" />
 
-                        <com.corebase.element.CustomTextView
-                            android:id="@+id/acViewMelk_txt_PropertyRahnPrice"
-                            style="@style/property_info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:paddingLeft="8dp"
-                            android:text="Info" />
-
-                        <com.corebase.element.CustomTextView
-                            style="@style/property_title"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:text="قیمت رهن" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/acViewMelk_ll_Ejare"
-                        style="@style/property_inofholder"
-                        android:layout_width="match_parent"
+                    <com.corebase.element.CustomTextView
+                        style="@style/property_title"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" >
-
-                        <com.corebase.element.CustomTextView
-                            android:id="@+id/acViewMelk_txt_PropertyEjare"
-                            style="@style/property_info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Info" />
-
-                        <com.corebase.element.CustomTextView
-                            style="@style/property_title"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:text="قیمت اجاره" />
-                    </LinearLayout>
+                        android:layout_weight="0"
+                        android:text="قیمت رهن: " />
                 </LinearLayout>
 
+                <LinearLayout
+                    android:id="@+id/acViewMelk_ll_Ejare"
+                    style="@style/property_inofholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <com.corebase.element.CustomTextView
+                        android:id="@+id/acViewMelk_txt_PropertyEjare"
+                        style="@style/property_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Info" />
+
+                    <com.corebase.element.CustomTextView
+                        style="@style/property_title"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="قیمت اجاره: " />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -259,7 +242,7 @@
                 android:background="#e5e5e5"
                 android:gravity="right"
                 android:orientation="vertical"
-                android:padding="12dp" >
+                android:padding="16dp" >
 
                 <com.corebase.element.CustomTextView
                     android:id="@+id/acViewMelk_txt_PropertyAddress"
@@ -283,8 +266,9 @@
                         style="@style/property_info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
                         android:layout_weight="1"
-                        android:gravity="center"
+                        android:gravity="right"
                         android:text="Info"
                         android:textSize="16sp" />
 
@@ -294,7 +278,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center"
+                        android:gravity="right"
+                        android:paddingRight="0dp"
                         android:text="Info"
                         android:textSize="16sp" />
 

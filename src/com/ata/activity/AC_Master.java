@@ -13,7 +13,6 @@ import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
@@ -29,7 +28,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -54,11 +52,11 @@ import com.crittercism.app.Crittercism;
 public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 
 	SectionsPagerAdapter mSectionsPagerAdapter;
-	private fr_AmlakDarkhasti fr_AmlakDarkhasti;
-
 	ViewPager mViewPager;
+
 	private fr_AmlakShoma fr_AmlakShoma;
 	private fr_Search fr_Search;
+	private fr_AmlakDarkhasti fr_AmlakDarkhasti;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +65,9 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 
 		// init Crittercim
 		intitCritticim();
+
+		// Set local
+		sf.SetLocal(getBaseContext(), "fa");
 
 		// check for new verison
 		InternetConnection.checkForNewVersion(getContext());
@@ -151,9 +152,6 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 		mViewPager.setCurrentItem(2);
 		getActionBar().setSelectedNavigationItem(2);
 
-		// Set local
-		sf.SetLocal(getBaseContext(), "fa");
-
 		// Check if user need to visit tutorial
 		if (getSettingValue("visitedtutorial").equals("0")) {
 			startActivityWithName(AC_Tutorial.class);
@@ -226,7 +224,7 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 				.setMessage(
 						"اعتبار پیامک شما در حال حاضر "
 								+ getSettingValue("smscredit")
-								+ " عدد میباشد، از اعتبار برای ارسال ملک به کاربران استفاده می گردد")
+								+ " عدد میباشد، از اعتبار برای ارسال اطلاعات املاک به مشتریان استفاده خواهد شد")
 				.setNegativeButton("برگشت", null)
 				.setPositiveButton("افزایش اعتبار پیامک",
 						new DialogInterface.OnClickListener() {
@@ -605,37 +603,11 @@ public class AC_Master extends CoreActivity implements ActionBar.TabListener {
 
 	}
 
-	/**
-	 * A placeholder fragment containing a simple view.
-	 */
-	public static class PlaceholderFragment extends Fragment {
-		/**
-		 * The fragment argument representing the section number for this
-		 * fragment.
-		 */
-		private static final String ARG_SECTION_NUMBER = "section_number";
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
 
-		/**
-		 * Returns a new instance of this fragment for the given section number.
-		 */
-		public static PlaceholderFragment newInstance(int sectionNumber) {
-			PlaceholderFragment fragment = new PlaceholderFragment();
-			Bundle args = new Bundle();
-			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-			fragment.setArguments(args);
-			return fragment;
-		}
-
-		public PlaceholderFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fr_amlakdarkhasti,
-					container, false);
-			return rootView;
-		}
+		// Set Local
+		sf.SetLocal(getBaseContext(), "fa");
 	}
-
 }

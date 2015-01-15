@@ -49,7 +49,7 @@ public class PublicRequest {
 		// request server
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 		params.add(new BasicNameValuePair("id", id + ""));
-		nc.WebRequest(context, config.requestUrl + "bongah/purchasebongahplan",
+		nc.WebRequest(context, config.requestUrl + "bongah/purchasesmscredit",
 				params, new OnResponseListener() {
 
 					@Override

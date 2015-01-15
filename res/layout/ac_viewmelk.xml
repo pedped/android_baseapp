@@ -74,6 +74,15 @@
                 android:orientation="vertical"
                 android:padding="12dp" >
 
+                <com.corebase.element.CustomTextView
+                    android:id="@+id/acViewMelk_et_Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
+                    android:text="توضیحات"
+                    android:textSize="18sp" />
+
                 <LinearLayout
                     android:id="@+id/acViewMelk_ll_Bedroom"
                     style="@style/property_inofholder"

@@ -119,7 +119,7 @@
                         style="@style/acAddMelk_Subtitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="مقدار متراژ را به متر مربع وارد نمایید" />
+                        android:text="مقدار زیربنا را به متر مربع وارد نمایید" />
 
                     <com.corebase.element.CustomEditText
                         android:id="@+id/acAddMelk_et_zirbana"
@@ -393,7 +393,7 @@
                     style="@style/acAddMelk_Subtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="آدرس دقیق ملک را وارد نمایید تا در صورت نیاز بتوانید از آدرس برای پیدا کردن ملک استفاده نمایید، آدرس وارد شده تنها برای بنگاه شما قابل نمایش و استفاده است" />
+                    android:text="آدرس دقیق ملک را وارد نمایید تا در صورت نیاز بتوانید از آدرس برای پیدا کردن ملک استفاده نمایید، آدرس وارد شده تنها برای در دسترس شما خواهد بود" />
 
             </LinearLayout>
 

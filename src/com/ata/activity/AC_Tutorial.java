@@ -27,7 +27,7 @@ public class AC_Tutorial extends CoreActivity {
 	private Button btn_Back;
 	private Button btn_StartApp;
 	private int currentstep = 0;
-	private Button btn_Start; 
+	private Button btn_Start;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -136,11 +136,12 @@ public class AC_Tutorial extends CoreActivity {
 			break;
 		case 2:
 		case 3:
+		case 4:
 			btn_Back.setVisibility(View.VISIBLE);
 			btn_Next.setVisibility(View.VISIBLE);
 			btn_StartApp.setVisibility(View.GONE);
 			break;
-		case 4:
+		case 5:
 			btn_Back.setVisibility(View.GONE);
 			btn_Next.setVisibility(View.GONE);
 			btn_StartApp.setVisibility(View.VISIBLE);
@@ -239,7 +240,7 @@ public class AC_Tutorial extends CoreActivity {
 				rootView = inflater.inflate(R.layout.ts_one, container, false);
 				break;
 			case 1:
-				rootView = inflater.inflate(R.layout.ts_two, container, false);
+				rootView = inflater.inflate(R.layout.ts_five, container, false);
 				break;
 			case 2:
 				rootView = inflater
@@ -249,7 +250,7 @@ public class AC_Tutorial extends CoreActivity {
 				rootView = inflater.inflate(R.layout.ts_four, container, false);
 				break;
 			case 4:
-				rootView = inflater.inflate(R.layout.ts_five, container, false);
+				rootView = inflater.inflate(R.layout.ts_two, container, false);
 				break;
 			default:
 				rootView = inflater.inflate(R.layout.ts_one, container, false);

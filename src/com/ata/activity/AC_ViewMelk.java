@@ -121,6 +121,14 @@ public class AC_ViewMelk extends CoreActivity {
 		findTextView(R.id.acViewMelk_txt_PropertyAddress).setText(
 				json.getString("privateaddress"));
 
+		// Description
+		findTextView(R.id.acViewMelk_et_Description).setText(
+				json.getString("description"));
+		if (json.getString("description").trim().length() == 0) {
+			findTextView(R.id.acViewMelk_et_Description).setVisibility(
+					View.GONE);
+		}
+
 		// Phone
 		findTextView(R.id.acViewMelk_txt_PropertyPhone).setText(
 				json.getString("phone"));

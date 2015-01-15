@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="در زیر لیست کاملی از مشتریانی که هم اکنون به دنبال ملکی با مشخصات ملک شما هستند، برای ارسال اطلاعات ملک به مشتریان بر روی کلید ارسال کلیک نمایید" />
+        android:text="در زیر لیست کاملی از مشتریانی که هم اکنون به دنبال ملکی با مشخصات ملک شما هستند، مشاهده می نمایید. برای ارسال اطلاعات ملک به مشتریان بر روی کلید ارسال کلیک نمایید" />
 
     <com.corebase.unlimited.UnlimitedListView
         android:id="@+id/acSuggestPhone_ul_Master"

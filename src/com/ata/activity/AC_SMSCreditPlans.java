@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 
 import com.amlakgostar.classes.PublicRequest;
+import com.ata.config.config;
 import com.ata.corebase.CoreActivity;
 import com.ata.corebase.sf;
 import com.ataalla.amlakgostar.R;
@@ -79,7 +80,7 @@ public class AC_SMSCreditPlans extends CoreActivity {
 		ul.setLimit(50);
 
 		// link
-		ul.setLink("http://amlak.edspace.org/api/bongah/getsmsplans");
+		ul.setLink(config.requestUrl + "bongah/getsmsplans");
 
 		// VIEWS
 		ul.getListView().setDividerHeight(0);

@@ -69,11 +69,14 @@ public class AC_Help extends CoreActivity {
 					public void onSuccess(String result) {
 						try {
 
+							// check if tutorial changed
+							if (!result.equals(getSettingValue("tut"))) {
+								// show the new text
+								webview.setText(Html.fromHtml(result));
+							}
+
 							// we have to store the received string
 							setSettingValue("tut", result);
-
-							// show the new text
-							webview.setText(Html.fromHtml(result));
 
 						} catch (Exception e) {
 							e.printStackTrace();

@@ -147,7 +147,7 @@
                             style="@style/acRegister_ItemHeader"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="شماره تلفن بنگاه" />
+                            android:text="شماره تلفن ثابت بنگاه" />
 
                         <com.corebase.element.CustomEditText
                             android:id="@+id/acRegister_et_ShomareSabet"
@@ -176,7 +176,7 @@
                             style="@style/acRegister_GroupHeader"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="مشخصات فردی و ورود به سامانه" />
+                            android:text="مشخصات صاحب مشاور املاک" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -185,14 +185,24 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical" >
 
+                        <com.corebase.element.CustomTextView
+                            android:id="@+id/CustomTextView10"
+                            style="@style/acRegister_ItemHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:layout_weight=".5"
+                            android:text="لطفا تمامی موارد خواسته شده زیر را وارد نمایید"
+                            android:textColor="#333" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal" >
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_weight=".5"
                                 android:gravity="right"
                                 android:orientation="vertical" >
@@ -214,8 +224,8 @@
                             </LinearLayout>
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_weight=".5"
                                 android:gravity="right"
                                 android:orientation="vertical" >
@@ -242,7 +252,7 @@
                             style="@style/acRegister_ItemHeader"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="شماره تماس" />
+                            android:text="شماره موبایل" />
 
                         <com.corebase.element.CustomEditText
                             android:id="@+id/acRegister_et_Phone"

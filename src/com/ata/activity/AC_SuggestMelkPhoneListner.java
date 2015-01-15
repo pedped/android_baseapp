@@ -25,10 +25,6 @@ import com.ata.corebase.interfaces.OnResponseListener;
 import com.ata.corebase.nc;
 import com.ata.corebase.sf;
 import com.ataalla.amlakgostar.R;
-import com.ataalla.amlakgostar.R.id;
-import com.ataalla.amlakgostar.R.layout;
-import com.ataalla.amlakgostar.R.menu;
-import com.ataalla.amlakgostar.R.string;
 import com.corebase.interfaces.OnUnlimitedListLoadListner;
 import com.corebase.unlimited.UnlimitedAdapter.UnlimitListAdapterItem;
 import com.corebase.unlimited.UnlimitedAdapter.UnlimitListAdapterItem.UnlimitListAdapterItemType;
@@ -184,7 +180,7 @@ public class AC_SuggestMelkPhoneListner extends CoreActivity {
 		ul.setLimit(500);
 
 		// link
-		ul.setLink("http://amlak.edspace.org/api/bongah/getphonesuggestion/"
+		ul.setLink(config.requestUrl + "bongah/getphonesuggestion/"
 				+ melkID);
 
 		// VIEWS

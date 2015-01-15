@@ -63,27 +63,27 @@ public class fr_AmlakDarkhasti extends Fragment {
 		ul.setLimit(50);
 
 		// link
-		ul.setLink("http://amlak.edspace.org/api/bongah/getmelkrequest");
+		ul.setLink(config.requestUrl + "bongah/getmelkrequest");
 
 		// VIEWS
 		ul.getListView().setDividerHeight(0);
 		ul.getListView().setDivider(null);
 
 		// set view item
-		ul.addItem("header", new UnlimitListAdapterItem("header", "header",
+		ul.addItem("header", new UnlimitListAdapterItem("review", "header",
 				UnlimitListAdapterItemType.TextView));
 
 		ul.addItem("pricerange", new UnlimitListAdapterItem("pricerange",
 				"pricerange", UnlimitListAdapterItemType.TextView));
 
-		// ul.addItem("phone", new UnlimitListAdapterItem("phone", "phone",
-		// UnlimitListAdapterItemType.TextView));
+		ul.addItem("melkcountinfo", new UnlimitListAdapterItem("melkcountinfo",
+				"melkcountinfo", UnlimitListAdapterItemType.HTMLText));
 
-		ul.addItem("date", new UnlimitListAdapterItem("date", "date",
-				UnlimitListAdapterItemType.TextView));
+		ul.addItem("date", new UnlimitListAdapterItem("unixdate", "date",
+				UnlimitListAdapterItemType.Timeago));
 
-		ul.addItem("rate", new UnlimitListAdapterItem("melkscanbesentcount",
-				"rate", UnlimitListAdapterItemType.TextView));
+		// ul.addItem("rate", new UnlimitListAdapterItem("melkscanbesentcount",
+		// "rate", UnlimitListAdapterItemType.TextView));
 
 		// set on item click listner
 		ul.setOnItemClickListner(new OnUnlimitedListClickListner() {

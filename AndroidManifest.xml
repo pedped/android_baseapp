@@ -52,37 +52,44 @@
         <!-- Activities -->
         <activity
             android:name="com.ata.coreapp.ListActivity"
+            android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_LoginGoogle"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__login"
             android:logo="@drawable/home_icon"
             android:windowSoftInputMode="adjustResize|stateHidden" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_Login"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__login"
             android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_Register"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__register"
             android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_ContactUs"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__contact_us"
             android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_ViewNotification"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__view_notification"
             android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_Home"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__home"
             android:logo="@drawable/home_icon" >
         </activity>
@@ -106,79 +113,93 @@
         </receiver>
 
         <activity
-            android:icon="@drawable/amlakgostaricon"
             android:name="com.ata.activity.AC_Master"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:icon="@drawable/amlakgostaricon"
             android:label="@string/title_activity_ac__master"
             android:logo="@drawable/amlakgostaricon" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.ata.activity.AC_ViewMelkRequest"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__view_melk_request"
             android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_AddMelk"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__add_melk"
             android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_SendMelkInfo"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__send_melk_info"
             android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_SearchResult"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__search_result"
             android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_ViewMelk"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__view_melk"
             android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_ViewMap"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__view_map"
             android:logo="@drawable/home_icon"
             android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_SuggestMelkPhoneListner"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__suggest_melk_phone_listner"
             android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_Intro"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__intro"
             android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_SMSCreditPlans"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__smscredit_plans"
             android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_BongahPlans"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__bongah_plans"
             android:logo="@drawable/home_icon" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_Help"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__tutorial" >
         </activity>
         <activity
             android:name="com.ata.activity.AC_Tutorial"
+            android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_ac__tutorial" >
         </activity>
     </application>
 
     <!--
      To retrieve OAuth 2.0 tokens or invalidate tokens to disconnect a user. This disconnect
-     option is required to comply with the Google+ Sign-In developer policies
+     option is required to comply with the Google+ Sign-In developer policies
     -->
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
 

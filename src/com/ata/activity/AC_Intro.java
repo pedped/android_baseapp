@@ -1,5 +1,13 @@
 package com.ata.activity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -7,7 +15,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.ata.config.config;
 import com.ata.corebase.CoreActivity;
+import com.ata.corebase.interfaces.OnResponseListener;
+import com.ata.corebase.nc;
+import com.ata.corebase.sf;
 import com.ataalla.amlakgostar.R;
 
 public class AC_Intro extends CoreActivity {
@@ -42,6 +54,65 @@ public class AC_Intro extends CoreActivity {
 				startActivityWithName(AC_Register.class);
 			}
 		});
+
+		// check if user has connection, open breadcast link
+		if (sf.hasConnection(getContext())) {
+			requestNotifyServer();
+		}
+	}
+
+	private void requestNotifyServer() {
+
+		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		try {
+			params.add(new BasicNameValuePair("deviceid", sf
+					.getDeviceID(getContext())));
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		nc.WebRequest(getContext(), config.requestUrl + "public/trackintro",
+				params, new OnResponseListener() {
+
+					@Override
+					public void onUnSuccess(String message) {
+						new AlertDialog.Builder(getContext())
+								.setTitle(R.string.ops)
+								.setMessage(message)
+								.setPositiveButton(R.string.ok,
+										new DialogInterface.OnClickListener() {
+
+											@Override
+											public void onClick(
+													DialogInterface arg0,
+													int arg1) {
+
+											}
+										}).create().show();
+
+					}
+
+					@Override
+					public void onSuccess(String result) {
+						try {
+
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+
+					}
+
+					@Override
+					public void onError() {
+
+					}
+
+					@Override
+					public void Anytime() {
+
+					}
+				});
+
 	}
 
 	@Override

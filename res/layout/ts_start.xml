@@ -39,7 +39,7 @@
                 style="@style/acTutorial_Info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="املاک گستر جدیدترین روش ارتباط مشتری با مشاوران املاک می باشد، برای مشاهده مزایای استفاده از سامانه املاک گستر، کلید &apos;شروع&apos; را فشار دهید" />
+                android:text="املاک گستر جدیدترین روش ارتباط مشتری و مشاوران املاک می باشد، برای مشاهده مزایای استفاده از سامانه املاک گستر، کلید &apos;شروع&apos; را فشار دهید" />
 
         </LinearLayout>
     </ScrollView>

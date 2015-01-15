@@ -1038,6 +1038,9 @@ public class AC_AddMelk extends CoreActivity implements LocationListener {
 											AC_SuggestMelkPhoneListner.class);
 									intent.putExtra("melkid", melkID);
 									startActivity(intent);
+
+									// finish activity
+									finish();
 								}
 							}).setOnCancelListener(new OnCancelListener() {
 
@@ -1327,7 +1330,8 @@ public class AC_AddMelk extends CoreActivity implements LocationListener {
 				String melkType = list.get(pos);
 				if (melkType.equals("خانه") || melkType.equals("آپارتمان")
 						|| melkType.equals("دفتر کار")
-						|| melkType.equals("اتاق کار")) {
+						|| melkType.equals("اتاق کار")
+						|| melkType.equals("ویلا")) {
 
 					// we have to search for bed
 					findLinearLayout(R.id.acAddMelk_ll_Bedroom).setVisibility(

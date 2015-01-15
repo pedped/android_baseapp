@@ -33,7 +33,7 @@ public class fr_AmlakShoma extends Fragment {
 	protected String TAG = "fr_AmlakShoma";
 	private LinearLayout ll_RequestAddMelk;
 
-	@Override 
+	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
@@ -99,7 +99,7 @@ public class fr_AmlakShoma extends Fragment {
 		ul.getListView().setDivider(null);
 
 		// link
-		ul.setLink("http://amlak.edspace.org/api/bongah/getmelks");
+		ul.setLink(config.requestUrl + "bongah/getmelks");
 
 		// set view item
 		ul.addItem("type", new UnlimitListAdapterItem("type", "type",
@@ -111,11 +111,14 @@ public class fr_AmlakShoma extends Fragment {
 		ul.addItem("area", new UnlimitListAdapterItem("area", "area",
 				UnlimitListAdapterItemType.TextView));
 
-		ul.addItem("date", new UnlimitListAdapterItem("date", "date",
-				UnlimitListAdapterItemType.TextView));
+		ul.addItem("date", new UnlimitListAdapterItem("unixdate", "date",
+				UnlimitListAdapterItemType.Timeago));
 
 		ul.addItem("image", new UnlimitListAdapterItem("image", "image",
 				UnlimitListAdapterItemType.ImageView));
+
+		ul.addItem("id", new UnlimitListAdapterItem("id", "id",
+				UnlimitListAdapterItemType.TextView));
 
 		// set on item click listner
 		ul.setOnItemClickListner(new OnUnlimitedListClickListner() {

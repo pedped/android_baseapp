@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -96,6 +97,9 @@ public class AC_SearchResult extends CoreActivity {
 		ul.addItem("date", new UnlimitListAdapterItem("date", "date",
 				UnlimitListAdapterItemType.TextView));
 
+		ul.addItem("id", new UnlimitListAdapterItem("id", "id",
+				UnlimitListAdapterItemType.TextView));
+
 		ul.addItem("image", new UnlimitListAdapterItem("image", "image",
 				UnlimitListAdapterItemType.ImageView));
 
@@ -110,8 +114,7 @@ public class AC_SearchResult extends CoreActivity {
 					View arg1, int arg2, long arg3) {
 
 				Log.d(TAG, JsonItem);
-				
-				
+
 				// try to open activity
 				try {
 					JSONObject item;
@@ -260,7 +263,7 @@ public class AC_SearchResult extends CoreActivity {
 			result += " رهن " + json.getString("rahnhuman");
 			result += " و اجاره " + json.getString("ejarehuman");
 		}
-
+		result += " کد ملک: " + json.getString("id");
 		return result;
 	}
 

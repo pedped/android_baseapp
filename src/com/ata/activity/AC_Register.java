@@ -88,7 +88,7 @@ public class AC_Register extends CoreActivity implements LocationListener {
 			new AlertDialog.Builder(getContext())
 					.setTitle("عدم دسترسی به اینترنت")
 					.setMessage(
-							"برای ثبت نام در سامانه نیاز به ابنترنت دارید، اطفا اینترنت گوشی را فعال نمایید و سپس مجددا تلاش نمایید")
+							"برای ثبت نام در سامانه نیاز به اینترنت دارید، لطفا اینترنت گوشی را فعال نمایید و سپس مجددا تلاش نمایید")
 					.setPositiveButton(R.string.ok,
 							new DialogInterface.OnClickListener() {
 

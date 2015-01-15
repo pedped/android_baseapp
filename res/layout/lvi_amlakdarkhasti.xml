@@ -12,37 +12,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <com.corebase.element.CustomTextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:tag="rate"
-            android:text="5"
-            android:textColor="#590"
-            android:textSize="48sp" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="vertical" >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right"
+                android:gravity="center"
                 android:orientation="horizontal" >
 
                 <com.corebase.element.CustomTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:gravity="center"
                     android:tag="header"
                     android:text="نوع"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textSize="26sp" />
-
+                    android:textSize="24sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -57,13 +47,35 @@
                     android:layout_weight="1"
                     android:tag="pricerange"
                     android:text="قیمت"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center" >
+
+                <com.corebase.element.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:tag="melkcountinfo"
+                    android:text="5"
+                    android:textSize="18sp"
+                    android:visibility="visible" />
+
             </LinearLayout>
 
             <com.corebase.element.CustomTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
                 android:tag="date"
                 android:text="تاریخ"
                 android:textColor="#555"

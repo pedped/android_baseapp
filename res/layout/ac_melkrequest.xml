@@ -130,7 +130,7 @@
                     android:layout_weight="0"
                     android:gravity="center"
                     android:padding="8dp"
-                    android:text="در حال حاضر ملکی متناسب با نیاز این شخص موجود ندارید، لطفا املاک خود را اضافه نمایید"
+                    android:text="در حال حاضر ملک مناسبی برای این شخص در سامانه ندارید. ابتدا املاک خود را اضافه نمایید"
                     android:textColor="#999"
                     android:textSize="16sp" />
 
@@ -141,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
                     android:layout_weight="0"
-                    android:text="اضافه کردن ملک"
+                    android:text="افزودن ملک"
                     android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>

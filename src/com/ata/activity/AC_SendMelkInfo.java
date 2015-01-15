@@ -228,7 +228,7 @@ public class AC_SendMelkInfo extends CoreActivity {
 		ul.setLimit(5000);
 
 		// link
-		ul.setLink("http://amlak.edspace.org/api/bongah/fetchmelkcanbesent/"
+		ul.setLink(config.requestUrl + "bongah/fetchmelkcanbesent/"
 				+ id);
 
 		// VIEWS
